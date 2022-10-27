@@ -12,6 +12,7 @@ createApp({
             textoBuscar: "",
             articulosCheck: [],
             articulo: {},
+            modal:[],
             textoBuscar: "",
             ArtCarrito: [],
             inputDrop: "",
