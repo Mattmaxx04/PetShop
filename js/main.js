@@ -101,10 +101,27 @@ createApp({
              },
     computed: {
         filtro(){
-            if(this.textoBuscar==''){
+            if(this.textoBuscar=='' && this.inputDrop.length==0){
                 this.articulos = this.backUpArticulos
-            }else{
+            }
+            if(this.textoBuscar!='' && this.inputDrop.length==0){
                 this.articulos = this.backUpArticulos.filter(articulo => articulo.nombre.toLowerCase().includes(this.textoBuscar.toLowerCase()))
+            }
+            if(this.textoBuscar!='' && this.inputDrop.length!=0){
+                if(this.inputDrop=="Max"){
+                    this.articulos = this.backUpArticulos.filter(articulo => articulo.nombre.toLowerCase().includes(this.textoBuscar.toLowerCase())).sort((a,b) => b.precio - a.precio)
+                }
+                if(this.inputDrop=="Min"){
+                    this.articulos = this.backUpArticulos.filter(articulo => articulo.nombre.toLowerCase().includes(this.textoBuscar.toLowerCase())).sort((a,b) => a.precio - b.precio)
+                }
+            }
+            if(this.textoBuscar=='' && this.inputDrop.length!=0){
+                if(this.inputDrop=="Max"){
+                    this.articulos = this.backUpArticulos.filter(articulo => articulo.nombre.toLowerCase().includes(this.textoBuscar.toLowerCase())).sort((a,b) => b.precio - a.precio)
+                }
+                if(this.inputDrop=="Min"){
+                    this.articulos = this.backUpArticulos.filter(articulo => articulo.nombre.toLowerCase().includes(this.textoBuscar.toLowerCase())).sort((a,b) => a.precio - b.precio)
+                }
             }
         },
        /* pintarSuma(){
