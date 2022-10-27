@@ -5,9 +5,7 @@ createApp({
         return {
             articulos: [],
             urlApi: "https://apipetshop.herokuapp.com/api/articulos",
-            juguetes:{},
-            medicamentos:{},
-            bajoStock:{}
+           
         };
     },
     created() {
