@@ -4,3 +4,490 @@
     box-sizing: content-box;
     font-size: 20px;
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Source+Sans+Pro:wght@300&display=swap');
+
+
+:root{
+--color1:#7fc8f8;
+--color2:#5aa9e6;
+--color3:#a2d0f0;
+--color4:#f9f9f9;
+--color5:#ffe45e;
+--color6:#ff6392;
+--color7:#d3cece;
+--color8:#2d6086;
+--font1:'Poppins';
+--font2: 'Source Sans Pro';
+}
+/*-------------------body------------------------*/
+body{
+    background-image: url(../assets/fondo.jpeg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    box-shadow: 0 8px 5px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+}
+
+/*-------------------header------------------------*/
+header{
+max-width: 100%;
+}
+header h1{
+    font-family: var(--font1);
+    color:var(--color2);
+    font-weight: 600;
+}
+.title{
+    text-align: center;
+}
+header p{
+    font-family: var(--font2);
+    font-size: 0.8rem;
+    color:var(--color8);
+    font-weight:600;
+}
+.cta{
+    font-family: var(--font2);
+    font-size: 0.8rem;
+}
+.carousel{
+    margin-top: 1rem;
+}
+.slide{
+    width: 100%;
+}
+nav{
+    background-color: var(--color3);
+    display: flex!important;
+}
+
+.navbar__img{
+    height: 3rem;
+    background-image: url(../assets/logopetshop.png);
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.nav-link{
+    font-family: var(--font1)!important;
+    color:var(--color8)!important;
+}
+
+.nav-link:hover{
+    color:var(--color6)!important;
+}
+
+.bi-cart:hover{
+    padding: 0.5rem;
+    border-radius: 10px;
+ border:2px var(--color6) solid;
+}
+
+/*-------------------main------------------------*/
+main{
+    min-height: 60vh;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.contacto__img{
+    width:50%;
+}
+
+.inicio{
+    display: flex;
+    align-items: center;
+    margin:1rem;
+    justify-content: space-evenly;
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 5px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+.inicio__img{
+width: 30%;
+margin:0.5rem;
+}
+.inicio__textos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.media__about{
+    height:20%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 0.5rem;
+    padding:0.3rem;
+    border-top:0.05rem solid rgb(176, 174, 174) ;
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 5px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+.list-features{
+    display: flex;
+    gap: 0.1rem;
+    flex-direction: column;
+    align-items: center;
+}
+.media-body{
+    display: flex;
+    align-items: center;
+}
+.media-body a{
+    text-decoration: none;
+
+}
+.media-left{
+    margin: 0.5rem;
+}
+.media__img{
+    font-size:2rem;
+    padding-right: 0.5rem;
+    margin-bottom: 2rem;
+}
+.doctors{
+    margin:1rem;
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 5px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    padding:1rem;
+}
+
+.doctors__container{
+display: flex;
+gap: 0.5rem;
+justify-content: center;
+}
+.card{
+    width: 16rem!important;
+    height: 26rem !important;
+    background: rgba( 255, 255, 255, 0.25 );    
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+.card-body{
+    height: 14rem;
+}
+.card-body h5{
+    font-family: var(--font1);
+    padding:0.2rem;
+    font-weight: 400;
+    color: var(--color6);
+}
+.card-text{
+    font-family: var(--font2);  
+    color:var(--color8);  
+    font-weight: 200;
+    font-size: 0.8rem;
+}
+.card__img1{
+    border-radius: 10px 10px 0px 0px;
+    height: 12rem;
+    background-image: url(../assets/vete1.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.card__img2{
+    border-radius: 10px 10px 0px 0px;
+    height: 12rem;
+    background-image: url(../assets/vete2.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.card__img3{
+    border-radius: 10px 10px 0px 0px;
+    height: 12rem;
+    background-image: url(../assets/vete3.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.card__img4{
+    border-radius: 10px 10px 0px 0px;
+    height: 12rem;
+    background-image: url(../assets/vete4.jpg);
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.ubicacion{
+    margin:0.5rem;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1.5rem;
+    align-items: center;
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 5px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+.ubicacion_text{
+    padding:1rem;
+}
+.ubicacion_text > p{
+    font-family: var(--font2);
+    font-size: 0.8rem;
+    color:var(--color8)
+}
+
+/*-------------------modal---------------------------*/
+
+  /*-------------------fin modal---------------------------*/
+
+/*------------------- cartas ------------------------*/
+.card-art{
+    width: 13rem;
+    min-height: 15rem;
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 5px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    transition: .4s;
+}
+.img-articulo-container{
+    background-color: white;
+    border-radius: 10px 10px 0px 0px;
+    height: 10rem;
+}
+.img-art{    
+    border-radius: 1rem;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+.card-body{
+    padding: .5rem;
+    height: 8rem;
+    
+}
+.card-title{
+    font-size: 1rem;
+}
+.btn-carrito{
+    padding: 5px 10px;
+    border-bottom: solid 1px black;
+    transition: .3s;
+}
+
+.btn-carrito:hover{
+    background-color: var(--color6);
+    border: none;
+}
+.btn-carrito a:hover{
+    color: white;
+}
+.card-art:hover{
+    transform: scale(1.05);
+}
+/*-------------------- farmacia - juguetes -------------------------- */
+.container-jyf{
+    background-color: var(--color2);
+}
+.header-j, .header-j2{
+    min-height: 10vh;
+    margin: 1rem;
+}
+.header-j div,.header-j2 div{
+    width: 45%;
+    height: 100%;    
+    font-family: var(--font2);
+}
+.header-j div{
+    background-color: #b5cbdb;
+}
+.header-j2 div{
+    background-color: #c4dbb5;
+}
+
+.header-j div h5, .header-j2 div h5 {
+    font-size: 3rem;
+    
+}
+
+.header-j div h5{
+    text-shadow: var(--color5) -3px 1px 1px;
+}
+
+.header-j2 div h5{
+    text-shadow: var(--color6) -3px 1px 1px;
+}
+.img-header-j{
+    width: 100%;
+    height: 100%;
+
+}
+.img-header-j .img, .img-header-j .img2{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.img-header-j .img{
+    object-position: bottom;
+}
+.img-header-j .img2{
+    object-position: 50% -490px;
+}
+.articulos-imperdibles{
+    background-color: var(--color5);
+    padding: 1rem;
+
+}
+
+
+/*-------------------footer------------------------*/
+footer{
+    min-height: 8vh;
+    background-color: var(--color3);
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    flex-direction: column;
+    
+}
+
+.footer__img{
+    height: 2rem;
+    background-image: url(../assets/logopetshop.png);
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.footer__list{
+    display: flex;
+}
+.footer__list__link{
+    text-decoration: none;
+}
+li {list-style:none;}
+.uil{
+    font-size: 1.5rem;
+    color:var(--color8)
+}
+.footertop{
+    display:flex;
+    width: 98vw;
+}
+.footer__left{
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    align-items: center;
+}
+.footer__rigth{
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+}
+
+h3{
+    color:var(--color2);
+    font-family: var(--font1);
+    font-weight: 600;
+}
+h6{
+    text-align: center;
+    color:var(--color8);
+    font-family: var(--font1);
+    font-weight: 600;
+}
+
+.text-copyright{
+    font-family: var(--font2);
+    font-size: 0.8rem;
+    color:var(--color8);
+}
+.developers{
+    display: flex;
+    gap: 0.3rem;
+    flex-wrap: wrap;
+}
+
+.btn__footer{
+    text-decoration: none;
+}
+
+
+/*-------------------media querys------------------------*/
+
+
+
+
+
+
+
+
+
+
+/*---------------------------------contact-----------------------*/
+
+#contactform {
+    background-color: rgba(255, 125, 0, 0.5);
+    padding: 2% 0 2% 0;
+}
+
+#headercontact {
+    background-color: rgba(245, 245, 245, 0.8);
+    border-radius: 3rem 3rem 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type= "text"], select, textarea, [type= "checkbox"] {
+    padding: 0;
+    margin-left: 1rem;
+    position: relative;
+ }
+
+#headercontact p {
+    font-size: 15px;
+}
+
+#headercontact h3 {
+    color: black;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.btn-primary{
+    background-color: #6C757D;
+    outline: none;
+    border: 0px;
+     box-shadow: none;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active{
+    background-color: #495056;
+    outline: none !important;
+    border: none !important;
+     box-shadow: none;
+}
+
+#img__contact {
+    width: 30%
+}
+
+
+/* modal prueba */
