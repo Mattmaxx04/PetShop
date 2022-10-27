@@ -62,7 +62,8 @@ createApp({
                     },
                     agregarCarrito(articulo) {
                         if(!this.articulosCarrito.includes(articulo)){
-                          this.articulosCarrito.push(articulo,)                    
+                          this.articulosCarrito.push(articulo,)
+                                            
                         
                         }           
                         localStorage.setItem('favorito', JSON.stringify(this.articulosCarrito))                  
