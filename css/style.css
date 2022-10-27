@@ -60,6 +60,7 @@ header p{
 .slide{
     width: 100%;
 }
+/*-------------------nav------------------------*/
 nav{
     background-color: var(--color3);
     display: flex!important;
