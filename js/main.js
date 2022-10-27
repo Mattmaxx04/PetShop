@@ -2,37 +2,125 @@ const { createApp } = Vue;
 
 createApp({
     data() {
-        return {
-            articulos: [],
+        return {            
             urlApi: "https://apipetshop.herokuapp.com/api/articulos",
-           
+            articulos: [],
+            articulosCarrito: [],
+            totalCarrito:[],
+            carrito:[],
+            backUpArticulos:[],
+            textoBuscar: "",
+            articulosCheck: [],
+            articulo: {},
+            textoBuscar: "",
+            ArtCarrito: [],
+            inputDrop: "",
+            array1: [],
+            total: "",
+            modals:""          
         };
     },
     created() {
         this.traerDatos();
+        if(JSON.parse(localStorage.getItem('favorito'))){
+            this.articulosCarrito = JSON.parse(localStorage.getItem('favorito'))
+        }
     },
     mounted() {
-
+        /*
+        this.modals = document.querySelectorAll("[data-modal]");
+        this.modals.forEach(function (trigger) {
+            trigger.addEventListener("click", function (event) {
+              event.preventDefault();
+              const modal = document.getElementById(trigger.dataset.modal);
+              modal.classList.add("open");
+              const exits = modal.querySelectorAll(".modal-exit");
+              exits.forEach(function (exit) {
+                exit.addEventListener("click", function (event) {
+                  event.preventDefault();
+                  modal.classList.remove("open");
+                });
+              });
+            });
+          });
+*/
     },
     methods: {
 
         traerDatos() {
             fetch(this.urlApi)
                 .then((response) => response.json())
-                .then((data) => {
-                    this.articulos = data.response;
-console.log(this.articulos);
-                    if (document.title == "Home") {
+                .then((data) => {   
+                    if (document.title == "Inicio") {
+                        this.articulos = data.response;
+                    }else if (document.title == "Farmacia") {
+
+                        data.response.forEach(articulo =>{
+                            if(articulo.tipo=='Medicamento'){
+                                this.backUpArticulos.push(articulo)
+
+                            }
+                        })
                        
-                    } else if (document.title == "Farmacia") {
-                    } else if (document.title == "Juguetes") {
-                    } else if (document.title == "Contacto") {
+                        
+                    }else if (document.title == "Juguetes") {
+                        data.response.forEach(articulo =>{
+                            if(articulo.tipo=='Juguete'){
+                                this.backUpArticulos.push(articulo)
+                            }
+                        })
+
+                        console.log(this.carrito);
+                    }else if (document.title == "Contacto") {
+
                     }
 
-                                });
+                    });
                     },
+                    agregarCarrito(articulo) {
+                        if(!this.articulosCarrito.includes(articulo)){
+                          this.articulosCarrito.push(articulo,)                    
+                        
+                        }           
+                        localStorage.setItem('favorito', JSON.stringify(this.articulosCarrito))                  
+                      },                  
+                      eliminarCarrito(articulo) {
+                        this.articulosCarrito = this.articulosCarrito.filter(articuloC => articuloC != articulo) 
+                     
+                        
+                        localStorage.setItem('favorito', JSON.stringify(this.articulosCarrito))
+                      },
+                     
+                      
+
+                      enviarForm(){      
+                        new swal("¡Gracias por contactarnos!", "Su solicitud ha sido procesada correctamente.", "success");       
+                    },
+                   
+                   
              },
     computed: {
-
+        filtro(){
+            if(this.textoBuscar==''){
+                this.articulos = this.backUpArticulos
+            }else{
+                this.articulos = this.backUpArticulos.filter(articulo => articulo.nombre.toLowerCase().includes(this.textoBuscar.toLowerCase()))
+            }
+        },
+       /* pintarSuma(){
+            this.carrito = []
+            console.log(this.articulosCarrito);
+            let array1 = []
+            this.articulosCarrito.forEach(articulo => array1.push(articulo.precio))
+            console.log(array1);
+            let array2 = 
+            array1.reduce((precio1, precio2) => {return precio1 + precio2;})                     
+            this.totalCarrito.push(array2)
+            this.carrito.push(this.articulosCarrito,this.totalCarrito)  
+            console.log( this.carrito);
+            console.log(this.carrito[1])
+    },*/
+        
     },
 }).mount("#app");
+
