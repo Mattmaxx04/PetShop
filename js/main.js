@@ -112,19 +112,7 @@ createApp({
                 this.articulos = this.backUpArticulos.filter(articulo => articulo.nombre.toLowerCase().includes(this.textoBuscar.toLowerCase()))
             }
         },
-       /* pintarSuma(){
-            this.carrito = []
-            console.log(this.articulosCarrito);
-            let array1 = []
-            this.articulosCarrito.forEach(articulo => array1.push(articulo.precio))
-            console.log(array1);
-            let array2 = 
-            array1.reduce((precio1, precio2) => {return precio1 + precio2;})                     
-            this.totalCarrito.push(array2)
-            this.carrito.push(this.articulosCarrito,this.totalCarrito)  
-            console.log( this.carrito);
-            console.log(this.carrito[1])
-    },*/
+
         
     },
 }).mount("#app");
