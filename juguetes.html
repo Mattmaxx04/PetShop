@@ -48,10 +48,10 @@
                 </a>
                 <ul class="dropdown-menu dropdown-menu-right ml-5">
                   <li>
-                    <div v-for="articulo in carrito">
+                    <div v-for="articulo in articulosCarrito">
                       <div class="d-flex justify-content-between">
                         <img :src="articulo.imagen" style="height: 5rem" alt="...">
-                        <p>{{articulo[0].nombre}}</p>
+                        <p>{{articulo.nombre}}</p>
                         <i class="bi bi-x-circle" @click="eliminarCarrito(articulo)"></i>
                       </div>
                     </div>
@@ -59,7 +59,7 @@
                   <li>
                     <div class="d-flex p-2 justify-content-between">
                       <p>Total</p>
-                      <p>${{articulo[1]}}</p>
+                      <p>${{articulo.precio}}</p>
                     </div>
                     <div class="dropdown-divider"></div>
                     <div class="d-grid gap-2">
@@ -81,7 +81,7 @@
         <div class="d-flex align-items-center justify-content-center">
           <h5 class="text-center">Toda la diversión, en un solo lugar</h5>
           <img src="assets/perrito4.jpg" class="inicio__img" alt="perrito">
-        </div>
+        </div>        
       </section>
 
 
@@ -114,7 +114,7 @@
                   data-bs-target="#exampleModal"><a class="text-black"><i class="uil uil-ellipsis-h"></i>
                   </a>
                 </button>
-
+             
 
                 <button type="button" class="btn btn-carrito m-2">
                   <a class="text-black"><i class="uil uil-shopping-cart"
@@ -127,26 +127,25 @@
       </div>
       <!-- MODAL -->
 
-      <!-- Modal -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel">
-                <h5 class="card-title text-center text-dark">{{articulo.nombre}}</h5>
-              </h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              ...
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-          </div>
-        </div>
-      </div>
+ <!-- Modal -->
+ <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+ aria-hidden="true">
+ <div class="modal-dialog">
+   <div class="modal-content">
+     <div class="modal-header">
+       <h1 class="modal-title fs-5" id="exampleModalLabel"> <h5 class="card-title text-center text-dark">{{articulo.nombre}}</h5></h1>
+       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+     </div>
+     <div class="modal-body">
+       ...
+     </div>
+     <div class="modal-footer">
+       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+       <button type="button" class="btn btn-primary">Save changes</button>
+     </div>
+   </div>
+ </div>
+</div>
 
     </main>
     <footer>
