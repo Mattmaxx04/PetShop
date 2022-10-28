@@ -463,6 +463,79 @@ h6{
 
 /*-------------------media querys------------------------*/
 
+@media screen and (max-width: 850px){
+    .header-j2,.header-j div h5{
+        font-size: 2rem;
+    }    
+    .header-j{
+        width: 90%;       
+    }
+    .header-j div{
+        width: 50%;
+        height: 100%;
+    }
+    
+}
+@media screen and (max-width: 650px){
+    .error-404{
+        flex-direction: column !important;
+        justify-content: center;
+        align-items: center;
+    }
+    .error-404 div{
+        width: 100%;
+        height: 50%;
+    }
+    .error-404 div p{
+        font-size: 1rem;
+    }
+    .error-404 div img{
+        height: 100%;
+    }
+    footer .footer__bootom{
+        display: flex;
+        flex-direction: column;
+    }
+    footer .developers{
+        flex-direction: column;
+    }
+}
+@media screen and (max-width: 450px){
+    .header-j2, .header-j{
+        flex-direction: column;        
+    }
+    .header-j{
+        width: 90%;    
+    }
+    .header-j2 div h5, .header-j div h5{
+        font-size: 1.5rem;
+    } 
+    .header-j2 div{
+        width: 90%;
+        height: 50%;
+    }
+    .header-j div{
+        width: 90%;
+        height: 50%;
+    }
+
+    footer .footertop{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    footer .developers {
+        justify-content: center;
+    }
+    
+}
+
+
+
+
+
 /*---------------------------------contact-----------------------*/
 
 #contactform {
