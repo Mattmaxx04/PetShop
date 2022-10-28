@@ -303,12 +303,18 @@ justify-content: center;
     transform: scale(1.05);
 }
 /*-------------------- farmacia - juguetes -------------------------- */
+.buscador{
+    width: 20rem;
+}
+.buscador input{
+    background-color: #ffffff7e;
+    border: none;
+}
 .container-jyf{
     background-color: var(--color2);
 }
 .header-j, .header-j2{
-    min-height: 10vh;
-    margin: 1rem;
+    height: 45vh;
 }
 .header-j div,.header-j2 div{
     width: 45%;

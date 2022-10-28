@@ -59,7 +59,7 @@
                   <li>
                     <div class="d-flex p-2 justify-content-between">
                       <p>Total</p>
-                      <p>${{articulo.precio}}</p>
+                      <p>${{totalCarrito}}</p>
                     </div>
                     <div class="dropdown-divider"></div>
                     <div class="d-grid gap-2">
@@ -77,18 +77,37 @@
     <main>
       {{filtro}}
 
-      <section class="container header-j d-flex justify-content-center align-items-center">
+      <section class="container header-j d-flex justify-content-center align-items-center mb-5 mt-5">
         <div class="d-flex align-items-center justify-content-center">
           <h5 class="text-center">Toda la diversión, en un solo lugar</h5>
-          <img src="assets/perrito4.jpg" class="inicio__img" alt="perrito">
-        </div>        
+        </div>   
+        <div class="img-header-j">
+          <img src="assets/perrito4.jpg" class="img" alt="perrito">
+        </div>     
       </section>
 
 
 
       <div class="d-flex justify-content-center">
-        <input v-model="textoBuscar" type="text" class="form-control text-center w-25"
-          placeholder="Busca tus articulos preferidos">
+        <div class="btn-group">
+          <button class="btn bg-dark text-white dropdown-toggle rounded-0 border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Ordenar por: 
+          </button>
+          <ul class="dropdown-menu rounded-0">
+            <li> <label for="Max">Mayor precio
+              <input v-model="inputDrop" type="radio" id="Max" value="Max">
+            </label></li>
+            <li><label for="Min">Menor precio
+              <input v-model="inputDrop" type="radio" id="Min" value="Min">
+            </label></li>
+          </ul>
+        </div>
+          
+  
+        <div class="d-flex justify-content-center buscador">
+          <input v-model="textoBuscar" type="text" class="form-control text-center p-1" 
+            placeholder="Busca tus articulos preferidos">
+        </div>
       </div>
 
       <div class="p-3 mt-4 d-flex flex-wrap container-jyf justify-content-center align-items-center gap-3 mb-4">
