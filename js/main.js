@@ -56,6 +56,7 @@ createApp({
         this.articulosCarrito.push(articulo);
       }
       localStorage.setItem("favorito", JSON.stringify(this.articulosCarrito));
+      this.totalCarrito += articulo.precio
     },
     eliminarCarrito(articulo) {
       this.articulosCarrito = this.articulosCarrito.filter(
@@ -63,6 +64,7 @@ createApp({
       );
 
       localStorage.setItem("favorito", JSON.stringify(this.articulosCarrito));
+      this.totalCarrito -= articulo.precio
     },
     agregarModal(articulo) {
       if (this.modal.length === 0) {
@@ -87,6 +89,9 @@ createApp({
       );
     },
   },
+  graciasPorSuCompra(){      
+    new swal("¡Gracias por su compra!", "Su solicitud ha sido procesada correctamente.", "success");       
+},
   computed: {
     filtro() {
       if (this.textoBuscar == "" && this.inputDrop.length == 0) {
@@ -137,19 +142,6 @@ createApp({
             .sort((a, b) => a.precio - b.precio);
         }
       }
-    },
-    /* pintarSuma(){
-            this.carrito = []
-            console.log(this.articulosCarrito);
-            let array1 = []
-            this.articulosCarrito.forEach(articulo => array1.push(articulo.precio))
-            console.log(array1);
-            let array2 = 
-            array1.reduce((precio1, precio2) => {return precio1 + precio2;})                     
-            this.totalCarrito.push(array2)
-            this.carrito.push(this.articulosCarrito,this.totalCarrito)  
-            console.log( this.carrito);
-            console.log(this.carrito[1])
-    },*/
+    },    
   },
 }).mount("#app");
