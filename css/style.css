@@ -6,7 +6,9 @@
 }
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Source+Sans+Pro:wght@300&display=swap');
 
-
+[v-cloak] {
+    display: none;
+}
 :root{
 --color1:#7fc8f8;
 --color2:#5aa9e6;
