@@ -55,7 +55,7 @@
                       <li>
                         <div class="d-flex p-2 justify-content-between">
                           <p>Total</p>
-                          <p>${{}}</p>
+                          <p>${{totalCarrito}}</p>
                         </div>
                         <div class="dropdown-divider"></div>
                         <div class="d-grid gap-2">
@@ -75,12 +75,12 @@
 
 
             {{filtro}}
-            <div class="bg-danger d-flex justify-content-center">
+            <div class="d-flex justify-content-center filter">
               <div class="btn-group">
-                <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <button class="btn bg-dark text-white dropdown-toggle rounded-0 border-0" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Ordenar por: 
                 </button>
-                <ul class="dropdown-menu">
+                <ul class="dropdown-menu rounded-0">
                   <li> <label for="Max">Mayor precio
                     <input v-model="inputDrop" type="radio" id="Max" value="Max">
                   </label></li>
@@ -90,10 +90,9 @@
                 </ul>
               </div>
                 
-              {{inputDrop}}
         
-              <div class="d-flex justify-content-center">
-                <input v-model="textoBuscar" type="text" class="form-control text-center p-1"
+              <div class="d-flex justify-content-center buscador">
+                <input v-model="textoBuscar" type="text" class="form-control text-center p-1" 
                   placeholder="Busca tus articulos preferidos">
               </div>
             </div>
@@ -103,7 +102,15 @@
       
       
             <div class="p-3 d-flex flex-wrap container-jyf justify-content-center align-items-center gap-3 mt-4 mb-4">
-              <p v-if="articulos.length==0" class="w-100 display-1 text-center">No se encontraron elementos</p>
+              
+              <div v-if="articulos.length==0" class="error-404 d-flex justify-content-center align-content-center flex-row gap-2">
+                <div class="d-flex align-items-center">
+                  <p class="text-center">No se encontraron elementos, por favor refina tu búsqueda</p>
+                </div>
+                <div>
+                  <img src="https://amazingeventsdalmimio.netlify.app/assets/img/404-error.svg" alt="error-404">
+                </div>
+              </div>
               
               <div v-for="articulo in articulos" class="card-art">
                 <div class="img-articulo-container d-flex justify-content-center">
@@ -117,10 +124,11 @@
                     <p v-if="articulo.stock<=5" class="card-text text-start text-danger fw-bolder">Pocas unidades!!!</p>
                    </div>
                     <div class="d-flex justify-content-end">
-                      <button type="button" class="btn btn-carrito m-2"><a class="text-black"><i
-                            class="uil uil-ellipsis-h"></i>
-                           </a>
-                      </button>
+                       <!-- Button trigger modal -->
+                <button type="button" class="btn btn-carrito m-2" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                  @click="agregarModal(articulo)"><a class="text-black"><i class="uil uil-ellipsis-h"></i>
+                  </a>
+                </button>
                       <button type="button" class="btn btn-carrito m-2">
                         <a class="text-black"><i class="uil uil-shopping-cart"
                             @click="agregarCarrito(articulo)"></i></a></button>
@@ -131,6 +139,44 @@
       
               </div>
             </div>
+            
+ <!-- Modal -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+
+          <div class="modal-content">
+
+            <div class="img-articulo-container d-flex justify-content-center">
+              <img :src="modal.imagen" class="img-art" alt="...">
+            </div>
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">
+                <h5 class="card-title text-center text-dark">{{modal.nombre}}</h5>
+              </h1>
+            </div>
+            <div class="modal-body">
+
+              <div class="card-body d-flex flex-column justify-content-between">
+                <div class="d-flex justify-content-between align-items-center modal__text">
+                  <div class="d-flex flex-column">
+                    <p class="card-text fw-bolder text-">{{modal.descripcion}}</p>
+                    <p v-if="articulo.stock<=5" class="card-text text-start text-danger fw-bolder">Últimas unidades!!!
+                    </p>
+                    <p>stock: {{modal.stock}}</p>
+
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                      @click="quitarModal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
       
             <section class="header-j2 d-flex justify-content-center align-items-center">
               <div class="d-flex align-items-center justify-content-center">

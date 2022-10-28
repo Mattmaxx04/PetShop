@@ -4,7 +4,8 @@
     box-sizing: content-box;
     font-size: 20px;
 }
-
+<<<<<<< HEAD
+=======
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Source+Sans+Pro:wght@300&display=swap');
 
@@ -306,19 +307,11 @@ justify-content: center;
     transform: scale(1.05);
 }
 /*-------------------- farmacia - juguetes -------------------------- */
-.buscador{
-    width: 20rem;
-}
-.buscador input{
-    background-color: #ffffff7e;
-    border: none;
-}
-
 .container-jyf{
     background-color: var(--color2);
 }
 .header-j, .header-j2{
-    height: 45vh !important;
+    min-height: 10vh;
     margin: 1rem;
 }
 .header-j div,.header-j2 div{
@@ -349,6 +342,7 @@ justify-content: center;
 .img-header-j{
     width: 100%;
     height: 100%;
+
 }
 .img-header-j .img, .img-header-j .img2{
     width: 100%;
@@ -358,7 +352,14 @@ justify-content: center;
 .img-header-j .img{
     object-position: bottom;
 }
+.img-header-j .img2{
+    object-position: 50% -490px;
+}
+.articulos-imperdibles{
+    background-color: var(--color5);
+    padding: 1rem;
 
+}
 
 
 /*-------------------footer------------------------*/
@@ -496,3 +497,4 @@ input[type= "text"], select, textarea, [type= "checkbox"] {
 
 
 /* modal prueba */
+>>>>>>> main
