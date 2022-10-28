@@ -32,7 +32,9 @@ body{
     backdrop-filter: blur( 4px );
     -webkit-backdrop-filter: blur( 4px );
 }
-
+a{
+    text-decoration: none;
+}
 /*-------------------header------------------------*/
 header{
 max-width: 100%;
