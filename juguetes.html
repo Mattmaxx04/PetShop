@@ -44,9 +44,9 @@
               <li class="nav-item">
                 <a class="nav-link active fw-bold" aria-current="page" href="contacto.html">Contacto</a>
               </li>
-              <li class="nav-item dropdown ">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                  data-bs-auto-close="false" aria-expanded="false">
+              <li class="nav-item dropdown dropstart">
+                <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown"
+                  data-bs-auto-close="outside" aria-expanded="false">
                   <i class="uil uil-shopping-cart"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-right ml-5" style="width: 20rem">
@@ -66,7 +66,7 @@
                       <p>{{totalCarrito}}</p>
                     </div>
                     <div class="dropdown-divider"></div>
-                    <form @submit.prevent="graciasPorSuCompra()">
+                    <form  @submit.prevent="graciasPorSuCompra()">
                       <div class="mt-3 w-100 d-flex justify-content-center">
                         <button id="submit" type="submit" class="btn btn-primary">Enviar</button>
                       </div>

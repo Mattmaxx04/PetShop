@@ -46,26 +46,25 @@ createApp({
                 this.backUpArticulos.push(articulo);
               }
             });
-
           } else if (document.title == "Contacto") {
           }
         });
     },
 
-
     agregarCarrito(articulo) {
-      if(!this.articulosCarrito.includes(articulo)){
-        this.articulosCarrito.push(articulo)             
-      }           
-      localStorage.setItem('favorito', JSON.stringify(this.articulosCarrito))
-      this.totalCarrito += articulo.precio                        
-    },                  
-    eliminarCarrito(articulo) {
-      this.articulosCarrito = this.articulosCarrito.filter(articuloC => articuloC != articulo)                        
-      localStorage.setItem('favorito', JSON.stringify(this.articulosCarrito))
-      this.totalCarrito -= articulo.precio                       
+      if (!this.articulosCarrito.includes(articulo)) {
+        this.articulosCarrito.push(articulo);
+      }
+      localStorage.setItem("favorito", JSON.stringify(this.articulosCarrito));
+      this.totalCarrito += articulo.precio;
     },
-
+    eliminarCarrito(articulo) {
+      this.articulosCarrito = this.articulosCarrito.filter(
+        (articuloC) => articuloC != articulo
+      );
+      localStorage.setItem("favorito", JSON.stringify(this.articulosCarrito));
+      this.totalCarrito -= articulo.precio;
+    },
 
     agregarModal(articulo) {
       if (this.modal.length === 0) {
@@ -89,10 +88,18 @@ createApp({
         "success"
       );
     },
-  
-  graciasPorSuCompra(){      
-    new swal("¡Gracias por su compra!", "Su solicitud ha sido procesada correctamente.", "success");       
-},},
+
+    graciasPorSuCompra() {
+        new swal(
+          "¡Gracias por su compra!",
+          "Su solicitud ha sido procesada correctamente.",
+          "success"
+        );
+        this.articulosCarrito = []
+        this.totalCarrito = 0
+      
+    },
+  },
   computed: {
     filtro() {
       if (this.textoBuscar == "" && this.inputDrop.length == 0) {
@@ -143,6 +150,6 @@ createApp({
             .sort((a, b) => a.precio - b.precio);
         }
       }
-    },    
+    },
   },
 }).mount("#app");

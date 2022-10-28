@@ -234,6 +234,7 @@ justify-content: center;
     background-position: center;
 }
 .ubicacion{
+    flex-wrap: wrap;
     margin:0.5rem;
     display: flex;
     justify-content: space-evenly;
@@ -316,6 +317,9 @@ justify-content: center;
     transform: scale(1.05);
 }
 /*-------------------- farmacia - juguetes -------------------------- */
+.dropdown-menu{
+    margin-top: 3rem!important;
+}
 .filter .dropdown-menu{
     border: solid 1px var(--color2);
  }
