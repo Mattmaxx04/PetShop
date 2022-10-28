@@ -83,18 +83,23 @@ createApp({
                         
                         }           
                         localStorage.setItem('favorito', JSON.stringify(this.articulosCarrito))                  
+                        this.totalCarrito += articulo.precio 
                       },                  
                       eliminarCarrito(articulo) {
                         this.articulosCarrito = this.articulosCarrito.filter(articuloC => articuloC != articulo) 
                      
                         
                         localStorage.setItem('favorito', JSON.stringify(this.articulosCarrito))
+                        this.totalCarrito -= articulo.precio 
                       },
                      
                       
 
                       enviarForm(){      
                         new swal("¡Gracias por contactarnos!", "Su solicitud ha sido procesada correctamente.", "success");       
+                    },
+                    graciasPorSuCompra(){      
+                        new swal("¡Gracias por su compra!", "Su solicitud ha sido procesada correctamente.", "success");       
                     },
                    
                    
