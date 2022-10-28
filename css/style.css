@@ -252,7 +252,16 @@ justify-content: center;
 }
 
 /*-------------------modal---------------------------*/
-
+.modal__text{
+    flex-direction: column;
+}
+.modal-backdrop{
+    height: 100%;
+}
+.modal-content{
+    padding: 1rem;
+    align-items: center;
+}
   /*-------------------fin modal---------------------------*/
 
 /*------------------- cartas ------------------------*/
