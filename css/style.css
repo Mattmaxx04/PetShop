@@ -4,9 +4,11 @@
     box-sizing: content-box;
     font-size: 20px;
 }
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Source+Sans+Pro:wght@300&display=swap');
 
+[v-cloak] {
+    display: none;
+}
 
 :root{
 --color1:#7fc8f8;
@@ -31,7 +33,9 @@ body{
     backdrop-filter: blur( 4px );
     -webkit-backdrop-filter: blur( 4px );
 }
-
+a{
+    text-decoration: none;
+}
 /*-------------------header------------------------*/
 header{
 max-width: 100%;
@@ -174,7 +178,7 @@ gap: 0.5rem;
 justify-content: center;
 }
 .card{
-    width: 16rem!important;
+    width: 14rem!important;
     height: 26rem !important;
     background: rgba( 255, 255, 255, 0.25 );    
     backdrop-filter: blur( 4px );
@@ -230,6 +234,7 @@ justify-content: center;
     background-position: center;
 }
 .ubicacion{
+    flex-wrap: wrap;
     margin:0.5rem;
     display: flex;
     justify-content: space-evenly;
@@ -252,7 +257,16 @@ justify-content: center;
 }
 
 /*-------------------modal---------------------------*/
-
+.modal__text{
+    flex-direction: column;
+}
+.modal-backdrop{
+    height: 100%;
+}
+.modal-content{
+    padding: 1rem;
+    align-items: center;
+}
   /*-------------------fin modal---------------------------*/
 
 /*------------------- cartas ------------------------*/
@@ -303,59 +317,80 @@ justify-content: center;
     transform: scale(1.05);
 }
 /*-------------------- farmacia - juguetes -------------------------- */
-.container-jyf{
-    background-color: var(--color2);
+.dropdown-menu{
+    margin-top: 3rem!important;
 }
-.header-j, .header-j2{
-    min-height: 10vh;
-    margin: 1rem;
-}
-.header-j div,.header-j2 div{
-    width: 45%;
-    height: 100%;    
-    font-family: var(--font2);
-}
-.header-j div{
-    background-color: #b5cbdb;
-}
-.header-j2 div{
-    background-color: #c4dbb5;
-}
-
-.header-j div h5, .header-j2 div h5 {
-    font-size: 3rem;
-    
-}
-
-.header-j div h5{
-    text-shadow: var(--color5) -3px 1px 1px;
-}
-
-.header-j2 div h5{
-    text-shadow: var(--color6) -3px 1px 1px;
-}
-.img-header-j{
-    width: 100%;
-    height: 100%;
-
-}
-.img-header-j .img, .img-header-j .img2{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.img-header-j .img{
-    object-position: bottom;
-}
-.img-header-j .img2{
-    object-position: 50% -490px;
-}
-.articulos-imperdibles{
-    background-color: var(--color5);
-    padding: 1rem;
-
-}
-
+.filter .dropdown-menu{
+    border: solid 1px var(--color2);
+ }
+ .buscador{
+     width: 20rem;
+ }
+ .buscador input{
+     background-color: #ffffff7e;
+     border: none;
+ }
+ 
+ .container-jyf{
+     background-color: var(--color2);
+ }
+ .header-j, .header-j2{
+     height: 45vh !important;
+ }
+ .header-j div,.header-j2 div{
+     width: 45%;
+     height: 100%;    
+     font-family: var(--font2);
+ }
+ .header-j div{
+     background-color: #b5cbdb;
+ }
+ .header-j2 div{
+     background-color: #c4dbb5;
+     
+ }
+ 
+ .header-j div h5, .header-j2 div h5 {
+     font-size: 3rem;
+     
+ }
+ 
+ .header-j div h5{
+     text-shadow: var(--color5) -3px 1px 1px;
+ }
+ 
+ .header-j2 div h5{
+     text-shadow: var(--color6) -3px 1px 1px;
+ }
+ .img-header-j{
+     width: 100%;
+     height: 100%;
+ }
+ .img-header-j .img, .img-header-j .img2{
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+ }
+ .img-header-j .img{
+     object-position: bottom;
+ }
+ 
+ .error-404{
+     height: 70vh;
+     width: 90%;
+ }
+ .error-404 div{
+     width: 45%;
+     height: 100%;
+ }
+ .error-404 div p{
+     font-size: 2rem;
+ }
+ .error-404 div img{
+     width: 90%;
+ }
+ 
+ 
 
 /*-------------------footer------------------------*/
 footer{
@@ -432,10 +467,74 @@ h6{
 
 /*-------------------media querys------------------------*/
 
+@media screen and (max-width: 850px){
+    .header-j2,.header-j div h5{
+        font-size: 2rem;
+    }    
+    .header-j{
+        width: 90%;       
+    }
+    .header-j div{
+        width: 50%;
+        height: 100%;
+    }
+    
+}
+@media screen and (max-width: 650px){
+    .error-404{
+        flex-direction: column !important;
+        justify-content: center;
+        align-items: center;
+    }
+    .error-404 div{
+        width: 100%;
+        height: 50%;
+    }
+    .error-404 div p{
+        font-size: 1rem;
+    }
+    .error-404 div img{
+        height: 100%;
+    }
+    footer .footer__bootom{
+        display: flex;
+        flex-direction: column;
+    }
+    footer .developers{
+        flex-direction: column;
+    }
+}
+@media screen and (max-width: 450px){
+    .header-j2, .header-j{
+        flex-direction: column;        
+    }
+    .header-j{
+        width: 90%;    
+    }
+    .header-j2 div h5, .header-j div h5{
+        font-size: 1.5rem;
+    } 
+    .header-j2 div{
+        width: 90%;
+        height: 50%;
+    }
+    .header-j div{
+        width: 90%;
+        height: 50%;
+    }
 
-
-
-
+    footer .footertop{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    footer .developers {
+        justify-content: center;
+    }
+    
+}
 
 
 
@@ -446,6 +545,7 @@ h6{
 #contactform {
     background-color: rgba(255, 125, 0, 0.5);
     padding: 2% 0 2% 0;
+    box-shadow: -2px 11px 5px -4px rgba(0,0,0,0.75);
 }
 
 #headercontact {
@@ -456,11 +556,55 @@ h6{
     align-items: center;
 }
 
+.input label {
+    position: absolute;
+    left: 1rem;
+    bottom: 0.1rem;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+    color: grey;
+}
+
+.input {
+    position: relative;
+}
+
+#labeltext {
+    position: absolute;
+    left: 1rem;
+    bottom: 2rem;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+    color: grey;
+}
+
 input[type= "text"], select, textarea, [type= "checkbox"] {
     padding: 0;
     margin-left: 1rem;
     position: relative;
+    border: none;
+    border-bottom: 2px solid silver;
+    outline: none;
  }
+
+ input .input {
+    
+ }
+
+ .input input:focus ~label, 
+ .input input:valid ~label {
+    transform: translateY(-1.6rem);
+    font-size: 0.6rem;
+    color: black;
+ } 
+
+ .input input:focus ~#labeltext, 
+ .input input:valid ~#labeltext {
+    transform: translateY(-1.2rem);
+    font-size: 0.6rem;
+    color: black;
+ } 
+
 
 #headercontact p {
     font-size: 15px;
