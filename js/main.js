@@ -12,12 +12,12 @@ createApp({
             textoBuscar: "",
             articulosCheck: [],
             articulo: {},
+            modal:[],
             textoBuscar: "",
             ArtCarrito: [],
             inputDrop: "",
             array1: [],
-            total: "",
-            modals:""          
+            total: ""       
         };
     },
     created() {
@@ -74,7 +74,15 @@ createApp({
                         
                         localStorage.setItem('favorito', JSON.stringify(this.articulosCarrito))
                       },
-                     
+                      agregarModal(articulo) {
+                        if (!this.modal.includes(articulo) && (this.modal.length === 0)) {
+                          array = Object.values(articulo)
+                          console.log(array);
+                          this.modal = {nombre:array[1], descripcion:array[2], imagen:array[5], stock:array[4]}
+                        }
+                  
+                        console.log(this.modal);
+                      },
                       
 
                       enviarForm(){      
