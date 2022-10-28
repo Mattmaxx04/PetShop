@@ -477,6 +477,7 @@ h6{
 #contactform {
     background-color: rgba(255, 125, 0, 0.5);
     padding: 2% 0 2% 0;
+    box-shadow: -2px 11px 5px -4px rgba(0,0,0,0.75);
 }
 
 #headercontact {
@@ -487,11 +488,55 @@ h6{
     align-items: center;
 }
 
+.input label {
+    position: absolute;
+    left: 1rem;
+    bottom: 0.1rem;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+    color: grey;
+}
+
+.input {
+    position: relative;
+}
+
+#labeltext {
+    position: absolute;
+    left: 1rem;
+    bottom: 2rem;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+    color: grey;
+}
+
 input[type= "text"], select, textarea, [type= "checkbox"] {
     padding: 0;
     margin-left: 1rem;
     position: relative;
+    border: none;
+    border-bottom: 2px solid silver;
+    outline: none;
  }
+
+ input .input {
+    
+ }
+
+ .input input:focus ~label, 
+ .input input:valid ~label {
+    transform: translateY(-1.6rem);
+    font-size: 0.6rem;
+    color: black;
+ } 
+
+ .input input:focus ~#labeltext, 
+ .input input:valid ~#labeltext {
+    transform: translateY(-1.2rem);
+    font-size: 0.6rem;
+    color: black;
+ } 
+
 
 #headercontact p {
     font-size: 15px;

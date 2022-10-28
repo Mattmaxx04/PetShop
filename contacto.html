@@ -100,29 +100,33 @@
         <div class="w-75 d-flex flex-column" id="contactform">
           <div class="d-flex w-100">
           <div class="w-50">
-        <div class="form-group">
-          <input type="text" class="form-control w-100 mt-3" id="exampleFormControlInput1" placeholder="Nombre y apellido" required>
+        <div class="form-group input">
+          <input type="text" class="form-control w-100 mt-4" id="exampleFormControlInput1" placeholder="" required>
+          <label>Nombre y apellido</label>
+        </div>
+        <div class="form-group input">
+          <input type="text" class="form-control w-100 mt-4" id="exampleFormControlInput1" placeholder="" required>
+          <label>Teléfono</label>
         </div>
         <div class="form-group">
-          <input type="text" class="form-control w-100 mt-3" id="exampleFormControlInput1" placeholder="Teléfono" required>
-        </div>
-        <div class="form-group">
-          <select class="form-control w-100 mt-3 p-0" id="exampleFormControlSelect1" required>
+          <select class="form-control w-100 mt-4 p-0" id="exampleFormControlSelect1" required>
             <option selected disabled value="">Seleccione un animal:</option>
             <option>Culebra</option>
             <option>Gato</option>
             <option>Perro</option>
             <option>Buho</option>
           </select>
+          
         </div>
       </div>
       <div class="w-50 d-flex align-items-center justify-content-center">
       <img id="img__contact" src="./assets/huella.png">
     </div>
     </div>
-        <div class="form-group">
-          <textarea class="form-control w-75 mt-3 p-0" id="exampleFormControlTextarea1" rows="3" placeholder="Comentarios" required></textarea>
-        </div>
+    <div class="form-group input">
+      <input type="text" class="form-control w-75 mt-4" id="exampleFormControlInput1" placeholder="" style="height: 3rem;" required>
+      <label id="labeltext">Comentarios</label>
+    </div>
         <div class="form-group">
           <input class="mt-3" type="checkbox" value="" required>
           <label>Acepto los <a href="">Términos y Condiciones</a></label>
