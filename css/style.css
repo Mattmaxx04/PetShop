@@ -303,7 +303,7 @@ justify-content: center;
     transform: scale(1.05);
 }
 /*-------------------- farmacia - juguetes -------------------------- */
-/*-------------------- farmacia - juguetes -------------------------- */
+
 .buscador{
     width: 20rem;
 }
@@ -311,13 +311,11 @@ justify-content: center;
     background-color: #ffffff7e;
     border: none;
 }
-
 .container-jyf{
     background-color: var(--color2);
 }
 .header-j, .header-j2{
-    height: 45vh !important;
-    margin: 1rem;
+    height: 45vh;
 }
 .header-j div,.header-j2 div{
     width: 45%;
@@ -329,7 +327,6 @@ justify-content: center;
 }
 .header-j2 div{
     background-color: #c4dbb5;
-    
 }
 
 .header-j div h5, .header-j2 div h5 {
@@ -347,6 +344,7 @@ justify-content: center;
 .img-header-j{
     width: 100%;
     height: 100%;
+
 }
 .img-header-j .img, .img-header-j .img2{
     width: 100%;
