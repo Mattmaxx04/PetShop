@@ -157,7 +157,7 @@
 
       <!-- Modal -->
       <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
          
           <div class="modal-content">
             <div class="img-articulo-container d-flex justify-content-center">
@@ -167,7 +167,6 @@
               <h1 class="modal-title fs-5" id="exampleModalLabel">
                 <h5 class="card-title text-center text-dark">{{modal.nombre}}</h5>
               </h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"> </button>
             </div>
             <div class="modal-body">
              
@@ -177,12 +176,11 @@
                     <p class="card-text fw-bolder text-">{{modal.descripcion}}</p>
                     <p v-if="articulo.stock<=5" class="card-text text-start text-danger fw-bolder">Últimas unidades!!!
                     </p>
-                    <p>stock:{{modal.stock}}</p>
+                    <p>stock: {{modal.stock}}</p>
 
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
                   </div>
                 </div>
               </div>
