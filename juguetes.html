@@ -111,7 +111,14 @@
       </div>
 
       <div class="p-3 mt-4 d-flex flex-wrap container-jyf justify-content-center align-items-center gap-3 mb-4">
-        <p v-if="articulos.length==0" class="w-100 display-1 text-center">No se encontraron elementos</p>
+        <div v-if="articulos.length==0" class="error-404 d-flex justify-content-center align-content-center flex-row gap-2">
+          <div class="d-flex align-items-center">
+            <p class="text-center">No se encontraron elementos, por favor refina tu búsqueda</p>
+          </div>
+          <div>
+            <img src="https://amazingeventsdalmimio.netlify.app/assets/img/404-error.svg" alt="error-404">
+          </div>
+        </div>
 
         <div v-for="articulo in articulos" class="card-art">
           <div class="img-articulo-container d-flex justify-content-center">
