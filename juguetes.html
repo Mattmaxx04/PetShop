@@ -64,7 +64,7 @@
                   <li>
                     <div class="d-flex p-2 justify-content-between">
                       <p>Total</p>
-                      <p>${{totalCarrito}}</p>
+                      <p>{{totalCarrito}}</p>
                     </div>
                     <div class="dropdown-divider"></div>
                     <form action="" @submit.prevent="graciasPorSuCompra()">
@@ -74,7 +74,7 @@
                     </form>
                   </li>
                 </ul>
-              </li>
+              </li>      
             </ul>
           </div>
         </div>
@@ -152,7 +152,6 @@
                   @click="agregarModal(articulo)"><a class="text-black"><i class="uil uil-ellipsis-h"></i>
                   </a>
                 </button>
-
 
                 <button type="button" class="btn btn-carrito m-2">
                   <a class="text-black"><i class="uil uil-shopping-cart"
