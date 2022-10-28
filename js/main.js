@@ -6,7 +6,7 @@ createApp({
       urlApi: "https://apipetshop.herokuapp.com/api/articulos",
       articulos: [],
       articulosCarrito: [],
-      totalCarrito: [],
+      totalCarrito: 0,
       carrito: [],
       backUpArticulos: [],
       textoBuscar: "",
@@ -51,21 +51,22 @@ createApp({
           }
         });
     },
-    agregarCarrito(articulo) {
-      if (!this.articulosCarrito.includes(articulo)) {
-        this.articulosCarrito.push(articulo);
-      }
-      localStorage.setItem("favorito", JSON.stringify(this.articulosCarrito));
-      this.totalCarrito += articulo.precio
-    },
-    eliminarCarrito(articulo) {
-      this.articulosCarrito = this.articulosCarrito.filter(
-        (articuloC) => articuloC != articulo
-      );
 
-      localStorage.setItem("favorito", JSON.stringify(this.articulosCarrito));
-      this.totalCarrito -= articulo.precio
+
+    agregarCarrito(articulo) {
+      if(!this.articulosCarrito.includes(articulo)){
+        this.articulosCarrito.push(articulo)             
+      }           
+      localStorage.setItem('favorito', JSON.stringify(this.articulosCarrito))
+      this.totalCarrito += articulo.precio                        
+    },                  
+    eliminarCarrito(articulo) {
+      this.articulosCarrito = this.articulosCarrito.filter(articuloC => articuloC != articulo)                        
+      localStorage.setItem('favorito', JSON.stringify(this.articulosCarrito))
+      this.totalCarrito -= articulo.precio                       
     },
+
+
     agregarModal(articulo) {
       if (this.modal.length === 0) {
         array = Object.values(articulo);
@@ -88,10 +89,10 @@ createApp({
         "success"
       );
     },
-  },
+  
   graciasPorSuCompra(){      
     new swal("¡Gracias por su compra!", "Su solicitud ha sido procesada correctamente.", "success");       
-},
+},},
   computed: {
     filtro() {
       if (this.textoBuscar == "" && this.inputDrop.length == 0) {

@@ -1,141 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    <link rel="stylesheet" href="./css/style.css">
-    <title>Contacto</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <title>Contacto</title>
 </head>
+
 <body>
   <div id="app">
     <header>
       <!-- NAV -->
-            <nav class="navbar navbar-expand-lg ">
-              <div class="container navbar__img"></div>
-              <div class="container-fluid">
-                <a class="navbar-brand" href="#"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                  aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                  <ul class="navbar-nav">
-                    <li class="nav-item">
-                      <a class="nav-link active fw-bold" aria-current="page" href="index.html">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link active fw-bold" aria-current="page" href="farmacia.html">Farmacia</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link active fw-bold" aria-current="page" href="juguetes.html">Juguetes</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link active fw-bold" aria-current="page" href="">Contacto</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        <i class="uil uil-shopping-cart"></i>
-                      </a>
-                      <ul class="dropdown-menu dropdown-menu-right ml-5">
-                        <li>
-                          <div v-for="articulo in articulosCarrito">
-                            <div class="d-flex justify-content-between">
-                              <img :src="articulo.imagen" style="height: 5rem" alt="...">
-                              <p>{{articulo.nombre}}</p>                       
-                              <i class="bi bi-x-circle" @click="eliminarCarrito(articulo)"></i>
-                            </div>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="d-flex p-2 justify-content-between">
-                            <p>Total</p>
-                            <p>${{}}</p>
-                          </div>
-                          <div class="dropdown-divider"></div>
-                          <div class="d-grid gap-2">
-                            <button class="btn btn-primary m-2" type="button">Enviar pedido</button>
-                          </div>
-                        </li>
-                      </ul>
-                    </li>
-                   </ul>
-                </div>
-              </div>
-            </nav>
-       <!-- carousel 
-      
-       <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active slide">
-            <img src="./assets/banner1.jpeg" class="d-block w-100 slide" alt="...">
+      <nav class="navbar navbar-expand-lg ">
+        <div class="container navbar__img"></div>
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active fw-bold" aria-current="page" href="index.html">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active fw-bold" aria-current="page" href="farmacia.html">Farmacia</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active fw-bold" aria-current="page" href="juguetes.html">Juguetes</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active fw-bold" aria-current="page" href="">Contacto</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  <i class="uil uil-shopping-cart"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-right ml-5">
+                  <li>
+                    <div v-for="articulo in articulosCarrito">
+                      <div class="d-flex justify-content-between">
+                        <img :src="articulo.imagen" style="height: 5rem" alt="...">
+                        <p>{{articulo.nombre}}</p>
+                        <i class="bi bi-x-circle" @click="eliminarCarrito(articulo)"></i>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="d-flex p-2 justify-content-between">
+                      <p>Total</p>
+                      <p>${{}}</p>
+                    </div>
+                    <div class="dropdown-divider"></div>
+                    <div class="d-grid gap-2">
+                      <button class="btn btn-primary m-2" type="button">Enviar pedido</button>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
           </div>
-          <div class="carousel-item slide">
-            <img src="./assets/banner2.jpeg" class="d-block w-100 slide" alt="...">
-          </div>
-          <div class="carousel-item slide">
-            <img src="./assets/banner3.jpeg" class="d-block w-100 slide" alt="...">          
-          </div>
-          <div class="carousel-item slide">
-            <img src="./assets/banner4.jpeg" class="d-block w-100 slide" alt="...">          
-          </div>            
         </div>
-      </div>-->
-      
-      
-          </header>
+      </nav>
+
+
+    </header>
     <main>
-    
+
       <form @submit.prevent="enviarForm()" class="d-flex flex-column align-items-center">
         <div class="w-75 text-center" id="headercontact">
           <h3>Contactanos</h3>
-      <p>Proporcione la información detallada para poder brindarle un mejor seguimiento a su solicitud.</p>
+          <p>Proporcione la información detallada para poder brindarle un mejor seguimiento a su solicitud.</p>
         </div>
-        
+
         <div class="w-75 d-flex flex-column" id="contactform">
           <div class="d-flex w-100">
-          <div class="w-50">
-        <div class="form-group input">
-          <input type="text" class="form-control w-100 mt-4" id="exampleFormControlInput1" placeholder="" required>
-          <label>Nombre y apellido</label>
+            <div class="w-50">
+              <div class="form-group input">
+                <input type="text" class="form-control w-100 mt-4" id="exampleFormControlInput1" placeholder=""
+                  required>
+                <label>Nombre y apellido</label>
+              </div>
+              <div class="form-group input">
+                <input type="text" class="form-control w-100 mt-4" id="exampleFormControlInput1" placeholder=""
+                  required>
+                <label>Teléfono</label>
+              </div>
+              <div class="form-group">
+                <select class="form-control w-100 mt-4 p-0" id="exampleFormControlSelect1" required>
+                  <option selected disabled value="">Seleccione un animal:</option>
+                  <option>Culebra</option>
+                  <option>Gato</option>
+                  <option>Perro</option>
+                  <option>Buho</option>
+                </select>
+
+              </div>
+            </div>
+            <div class="w-50 d-flex align-items-center justify-content-center">
+              <img id="img__contact" src="./assets/huella.png">
+            </div>
+          </div>
+          <div class="form-group input">
+            <input type="text" class="form-control w-75 mt-4" id="exampleFormControlInput1" placeholder=""
+              style="height: 3rem;" required>
+            <label id="labeltext">Comentarios</label>
+          </div>
+          <div class="form-group">
+            <input class="mt-3" type="checkbox" value="" required>
+            <label>Acepto los <a href="">Términos y Condiciones</a></label>
+          </div>
+
+          <div class="mt-3 w-100 d-flex justify-content-center">
+            <button id="submit" type="submit" class="btn btn-primary">Enviar</button>
+          </div>
         </div>
-        <div class="form-group input">
-          <input type="text" class="form-control w-100 mt-4" id="exampleFormControlInput1" placeholder="" required>
-          <label>Teléfono</label>
-        </div>
-        <div class="form-group">
-          <select class="form-control w-100 mt-4 p-0" id="exampleFormControlSelect1" required>
-            <option selected disabled value="">Seleccione un animal:</option>
-            <option>Culebra</option>
-            <option>Gato</option>
-            <option>Perro</option>
-            <option>Buho</option>
-          </select>
-          
-        </div>
-      </div>
-      <div class="w-50 d-flex align-items-center justify-content-center">
-      <img id="img__contact" src="./assets/huella.png">
-    </div>
-    </div>
-    <div class="form-group input">
-      <input type="text" class="form-control w-75 mt-4" id="exampleFormControlInput1" placeholder="" style="height: 3rem;" required>
-      <label id="labeltext">Comentarios</label>
-    </div>
-        <div class="form-group">
-          <input class="mt-3" type="checkbox" value="" required>
-          <label>Acepto los <a href="">Términos y Condiciones</a></label>
-        </div>
-        
-        <div class="mt-3 w-100 d-flex justify-content-center">
-          <button id="submit" type="submit" class="btn btn-primary">Enviar</button>
-      </div>
-      </div>
       </form>
 
     </main>
@@ -151,33 +138,33 @@
         <div class="vr"></div>
 
         <div class="footer__rigth">
-            <div class="footer__content" id="navbarNav">
-              <ul class="footer__list">
-                <li class="footer__list__item">
-                  <a class="footer__list__link active fw-bold" aria-current="page" href="contacto.html"><i
-                      class="uil uil-phone-alt"></i></a>
-                </li>
-                <li class="footer__list__item">
-                  <a class="footer__list__link active fw-bold" aria-current="page" href="index.html"><i
-                      class="uil uil-whatsapp"></i></a>
-                </li>
-                <li class="footer__list__item">
-                  <a class="footer__list__link active fw-bold" aria-current="page" href="farmacia.html"><i
-                      class="uil uil-facebook-f"></i></a>
-                </li>
-                <li class="footer__list__item">
-                  <a class="footer__list__link active fw-bold" aria-current="page" href="juguetes.html"><i
-                      class="uil uil-instagram"></i></a>
-                </li>
-                <li class="footer__list__item">
-                  <a class="footer__list__link active fw-bold" aria-current="page" href="juguetes.html"><i
-                      class="uil uil-map-marker"></i></a>
-                </li>
-              </ul>
-            </div>
+          <div class="footer__content" id="navbarNav">
+            <ul class="footer__list">
+              <li class="footer__list__item">
+                <a class="footer__list__link active fw-bold" aria-current="page" href="contacto.html"><i
+                    class="uil uil-phone-alt"></i></a>
+              </li>
+              <li class="footer__list__item">
+                <a class="footer__list__link active fw-bold" aria-current="page" href="index.html"><i
+                    class="uil uil-whatsapp"></i></a>
+              </li>
+              <li class="footer__list__item">
+                <a class="footer__list__link active fw-bold" aria-current="page" href="farmacia.html"><i
+                    class="uil uil-facebook-f"></i></a>
+              </li>
+              <li class="footer__list__item">
+                <a class="footer__list__link active fw-bold" aria-current="page" href="juguetes.html"><i
+                    class="uil uil-instagram"></i></a>
+              </li>
+              <li class="footer__list__item">
+                <a class="footer__list__link active fw-bold" aria-current="page" href="juguetes.html"><i
+                    class="uil uil-map-marker"></i></a>
+              </li>
+            </ul>
           </div>
+        </div>
       </div>
-      
+
 
       <div class="footer__bootom">
         <h6>Desarrollado por:</h6>
@@ -201,12 +188,13 @@
         </div>
       </div>
     </footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-  crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./js/main.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  </div>  
+  </div>
 </body>
+
 </html>
