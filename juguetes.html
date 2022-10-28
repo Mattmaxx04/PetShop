@@ -45,14 +45,14 @@
               <li class="nav-item">
                 <a class="nav-link active fw-bold" aria-current="page" href="contacto.html">Contacto</a>
               </li>
-              <li class="nav-item dropdown">
+              <li class="nav-item dropdown ">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" data-bs-auto-close="false"
                   aria-expanded="false">
                   <i class="uil uil-shopping-cart"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-right ml-5" style="width: 20rem">
                   <li>
-                    <div v-for="articulo in articulosCarrito">
+                    <div v-for="articulo in articulosCarrito" >
                       <div class="p-3 d-flex flex-wrap container-jyf justify-content-center gap-3 mt-4 mb-4">
                         <img :src="articulo.imagen" style="height: 5rem" alt="...">
                         <p>{{articulo.nombre}}</p>
@@ -79,6 +79,7 @@
           </div>
         </div>
       </nav>
+
 
     </header>
     <main>
