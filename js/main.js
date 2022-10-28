@@ -17,7 +17,7 @@ createApp({
       ArtCarrito: [],
       inputDrop: "",
       array1: [],
-      total: "",
+      total: ""
     };
   },
   created() {
