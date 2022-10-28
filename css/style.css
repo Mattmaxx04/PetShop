@@ -177,7 +177,7 @@ gap: 0.5rem;
 justify-content: center;
 }
 .card{
-    width: 16rem!important;
+    width: 14rem!important;
     height: 26rem !important;
     background: rgba( 255, 255, 255, 0.25 );    
     backdrop-filter: blur( 4px );
