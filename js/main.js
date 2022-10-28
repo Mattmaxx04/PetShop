@@ -79,22 +79,27 @@ createApp({
                     },
                     agregarCarrito(articulo) {
                         if(!this.articulosCarrito.includes(articulo)){
-                          this.articulosCarrito.push(articulo,)                    
+                          this.articulosCarrito.push(articulo)                    
                         
                         }           
                         localStorage.setItem('favorito', JSON.stringify(this.articulosCarrito))                  
-                      },                  
+                        this.totalCarrito += articulo.precio 
+                    },                  
                       eliminarCarrito(articulo) {
                         this.articulosCarrito = this.articulosCarrito.filter(articuloC => articuloC != articulo) 
                      
                         
                         localStorage.setItem('favorito', JSON.stringify(this.articulosCarrito))
-                      },
+                        this.totalCarrito += articulo.precio 
+                    },
                      
                       
 
                       enviarForm(){      
                         new swal("¡Gracias por contactarnos!", "Su solicitud ha sido procesada correctamente.", "success");       
+                    },
+                    graciasPorSuCompra(){      
+                        new swal("¡Gracias por su compra!", "Su solicitud ha sido procesada correctamente.", "success");       
                     },
                    
                    
@@ -107,19 +112,7 @@ createApp({
                 this.articulos = this.backUpArticulos.filter(articulo => articulo.nombre.toLowerCase().includes(this.textoBuscar.toLowerCase()))
             }
         },
-       /* pintarSuma(){
-            this.carrito = []
-            console.log(this.articulosCarrito);
-            let array1 = []
-            this.articulosCarrito.forEach(articulo => array1.push(articulo.precio))
-            console.log(array1);
-            let array2 = 
-            array1.reduce((precio1, precio2) => {return precio1 + precio2;})                     
-            this.totalCarrito.push(array2)
-            this.carrito.push(this.articulosCarrito,this.totalCarrito)  
-            console.log( this.carrito);
-            console.log(this.carrito[1])
-    },*/
+
         
     },
 }).mount("#app");
