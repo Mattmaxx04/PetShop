@@ -253,6 +253,12 @@ justify-content: center;
 
 /*-------------------modal---------------------------*/
 
+.modal__text{
+    flex-direction: column;
+}
+.modal-backdrop{
+    height: 100%;
+}
   /*-------------------fin modal---------------------------*/
 
 /*------------------- cartas ------------------------*/
