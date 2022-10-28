@@ -7,6 +7,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Source+Sans+Pro:wght@300&display=swap');
 
+[v-cloak] {
+    display: none;
+}
 
 :root{
 --color1:#7fc8f8;
@@ -312,59 +315,77 @@ justify-content: center;
     transform: scale(1.05);
 }
 /*-------------------- farmacia - juguetes -------------------------- */
-.container-jyf{
-    background-color: var(--color2);
-}
-.header-j, .header-j2{
-    min-height: 10vh;
-    margin: 1rem;
-}
-.header-j div,.header-j2 div{
-    width: 45%;
-    height: 100%;    
-    font-family: var(--font2);
-}
-.header-j div{
-    background-color: #b5cbdb;
-}
-.header-j2 div{
-    background-color: #c4dbb5;
-}
-
-.header-j div h5, .header-j2 div h5 {
-    font-size: 3rem;
-    
-}
-
-.header-j div h5{
-    text-shadow: var(--color5) -3px 1px 1px;
-}
-
-.header-j2 div h5{
-    text-shadow: var(--color6) -3px 1px 1px;
-}
-.img-header-j{
-    width: 100%;
-    height: 100%;
-
-}
-.img-header-j .img, .img-header-j .img2{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.img-header-j .img{
-    object-position: bottom;
-}
-.img-header-j .img2{
-    object-position: 50% -490px;
-}
-.articulos-imperdibles{
-    background-color: var(--color5);
-    padding: 1rem;
-
-}
-
+.filter .dropdown-menu{
+    border: solid 1px var(--color2);
+ }
+ .buscador{
+     width: 20rem;
+ }
+ .buscador input{
+     background-color: #ffffff7e;
+     border: none;
+ }
+ 
+ .container-jyf{
+     background-color: var(--color2);
+ }
+ .header-j, .header-j2{
+     height: 45vh !important;
+ }
+ .header-j div,.header-j2 div{
+     width: 45%;
+     height: 100%;    
+     font-family: var(--font2);
+ }
+ .header-j div{
+     background-color: #b5cbdb;
+ }
+ .header-j2 div{
+     background-color: #c4dbb5;
+     
+ }
+ 
+ .header-j div h5, .header-j2 div h5 {
+     font-size: 3rem;
+     
+ }
+ 
+ .header-j div h5{
+     text-shadow: var(--color5) -3px 1px 1px;
+ }
+ 
+ .header-j2 div h5{
+     text-shadow: var(--color6) -3px 1px 1px;
+ }
+ .img-header-j{
+     width: 100%;
+     height: 100%;
+ }
+ .img-header-j .img, .img-header-j .img2{
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+ }
+ .img-header-j .img{
+     object-position: bottom;
+ }
+ 
+ .error-404{
+     height: 70vh;
+     width: 90%;
+ }
+ .error-404 div{
+     width: 45%;
+     height: 100%;
+ }
+ .error-404 div p{
+     font-size: 2rem;
+ }
+ .error-404 div img{
+     width: 90%;
+ }
+ 
+ 
 
 /*-------------------footer------------------------*/
 footer{
