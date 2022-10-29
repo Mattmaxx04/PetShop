@@ -6,6 +6,9 @@
 }
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Source+Sans+Pro:wght@300&display=swap');
 
+[v-cloak] {
+    display: none;
+}
 
 :root{
 --colordark:#03191e;
@@ -149,6 +152,9 @@ margin:0.5rem;
     display: flex;
 }
 .marcas__about{
+    display: flex;
+}
+.marca__items{
     display: flex;
 }
 .doctors{
@@ -367,8 +373,7 @@ iframe{
  .error-404 div img{
      width: 90%;
  }
- 
- 
+
 
 /*-------------------footer------------------------*/
 footer{
@@ -470,6 +475,15 @@ h6{
 
 
 /*-------------------media querys------------------------*/
+
+
+
+
+
+
+
+
+
 
 /*---------------------------------contact-----------------------*/
 
