@@ -8,32 +8,25 @@
 
 
 :root{
---color1:#7fc8f8;
---color2:#5aa9e6;
---color3:#a2d0f0;
---color4:#f9f9f9;
---color5:#ffe45e;
---color6:#ff6392;
---color7:#d3cece;
---color8:#2d6086;
+--colordark:#03191e;
+--colordetails2:#477890;
+--colorligth:#ffffff;
+--colorligth2:#f6f7eb;
+--colorafirmative:#52b788;
+--colornegative:#e76f51;
+--colordetails1:#909cc2;
 --font1:'Poppins';
 --font2: 'Source Sans Pro';
 }
 /*-------------------body------------------------*/
 body{
-    background-image: url(../assets/fondo.jpeg);
-    background-size:cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center;
-    box-shadow: 0 8px 5px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 4px );
-    -webkit-backdrop-filter: blur( 4px );
+    background:var(--colorligth2);
 }
 a{
     text-decoration: none;
 }
 /*-------------------header------------------------*/
+/*
 header{
 max-width: 100%;
 }
@@ -62,11 +55,13 @@ header p{
     width: 100%;
 }
 /*-------------------nav------------------------*/
-nav{
-    background-color: var(--color3);
-    display: flex!important;
-}
 
+nav{
+    background-color: var(--colorligth)!important;
+    display: flex!important;
+    border-bottom: 1px solid var(--colordark);
+}
+/*
 .navbar__img{
     height: 3rem;
     background-image: url(../assets/logopetshop.png);
@@ -92,25 +87,21 @@ nav{
 /*-------------------main------------------------*/
 main{
     min-height: 60vh;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+   
 }
 
 .contacto__img{
-    width:50%;
+    width:40%;
 }
 
 .inicio{
     display: flex;
     align-items: center;
-    margin:1rem;
+    margin:0.5rem;
+    padding-top: 1rem;
     justify-content: space-evenly;
-    background: rgba( 255, 255, 255, 0.25 );
-    box-shadow: 0 8px 5px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 4px );
-    -webkit-backdrop-filter: blur( 4px );
-    border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    background: var(--colorligth);
+    
 }
 .inicio__img{
 width: 30%;
@@ -121,6 +112,7 @@ margin:0.5rem;
     flex-direction: column;
     align-items: center;
 }
+
 .media__about{
     height:20%;
     display: flex;
@@ -128,13 +120,7 @@ margin:0.5rem;
     justify-content: space-evenly;
     margin: 0.5rem;
     padding:0.3rem;
-    border-top:0.05rem solid rgb(176, 174, 174) ;
-    background: rgba( 255, 255, 255, 0.25 );
-    box-shadow: 0 8px 5px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 4px );
-    -webkit-backdrop-filter: blur( 4px );
-    border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    background: var(--colorligth);
 }
 .list-features{
     display: flex;
@@ -158,14 +144,16 @@ margin:0.5rem;
     padding-right: 0.5rem;
     margin-bottom: 2rem;
 }
+
+.media__items{
+    display: flex;
+}
+.marcas__about{
+    display: flex;
+}
 .doctors{
     margin:1rem;
-    background: rgba( 255, 255, 255, 0.25 );
-    box-shadow: 0 8px 5px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 4px );
-    -webkit-backdrop-filter: blur( 4px );
-    border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    background:var(--colorligth2);
     padding:1rem;
 }
 
@@ -177,11 +165,7 @@ justify-content: center;
 .card{
     width: 14rem!important;
     height: 26rem !important;
-    background: rgba( 255, 255, 255, 0.25 );    
-    backdrop-filter: blur( 4px );
-    -webkit-backdrop-filter: blur( 4px );
-    border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    background: var(--colorligth)
 }
 .card-body{
     height: 14rem;
@@ -190,11 +174,11 @@ justify-content: center;
     font-family: var(--font1);
     padding:0.2rem;
     font-weight: 400;
-    color: var(--color6);
+    color: var(--colordark);
 }
 .card-text{
     font-family: var(--font2);  
-    color:var(--color8);  
+    color:var(--colordark);  
     font-weight: 200;
     font-size: 0.8rem;
 }
@@ -231,17 +215,12 @@ justify-content: center;
     background-position: center;
 }
 .ubicacion{
+    flex-wrap: wrap;
     margin:0.5rem;
     display: flex;
     justify-content: space-evenly;
     padding: 1.5rem;
-    align-items: center;
-    background: rgba( 255, 255, 255, 0.25 );
-    box-shadow: 0 8px 5px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 4px );
-    -webkit-backdrop-filter: blur( 4px );
-    border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    align-items: center;    
 }
 .ubicacion_text{
     padding:1rem;
@@ -249,15 +228,30 @@ justify-content: center;
 .ubicacion_text > p{
     font-family: var(--font2);
     font-size: 0.8rem;
-    color:var(--color8)
+    color:var(--colordark)
 }
 
+iframe{
+    width: 30rem;
+    height: 15rem;
+    border-radius: 2rem;
+    border: 1px solid var(--colordetails1);
+}
 /*-------------------modal---------------------------*/
-
+/*.modal__text{
+    flex-direction: column;
+}
+.modal-backdrop{
+    height: 100%;
+}
+.modal-content{
+    padding: 1rem;
+    align-items: center;
+}
   /*-------------------fin modal---------------------------*/
 
 /*------------------- cartas ------------------------*/
-.card-art{
+/*.card-art{
     width: 13rem;
     min-height: 15rem;
     background: rgba( 255, 255, 255, 0.25 );
@@ -304,72 +298,117 @@ justify-content: center;
     transform: scale(1.05);
 }
 /*-------------------- farmacia - juguetes -------------------------- */
-.container-jyf{
-    background-color: var(--color2);
-}
-.header-j, .header-j2{
-    min-height: 10vh;
-    margin: 1rem;
-}
-.header-j div,.header-j2 div{
-    width: 45%;
-    height: 100%;    
-    font-family: var(--font2);
-}
-.header-j div{
-    background-color: #b5cbdb;
-}
-.header-j2 div{
-    background-color: #c4dbb5;
-    
-}
-
-.header-j div h5, .header-j2 div h5 {
-    font-size: 3rem;
-    
-}
-
-.header-j div h5{
-    text-shadow: var(--color5) -3px 1px 1px;
-}
-
-.header-j2 div h5{
-    text-shadow: var(--color6) -3px 1px 1px;
-}
-.img-header-j{
-    width: 100%;
-    height: 100%;
-
-}
-.img-header-j .img, .img-header-j .img2{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.img-header-j .img{
-    object-position: bottom;
-}
-.img-header-j .img2{
-    object-position: 50% -490px;
-}
-.articulos-imperdibles{
-    background-color: var(--color5);
-    padding: 1rem;
-
-}
-
+/*.filter .dropdown-menu{
+    border: solid 1px var(--color2);
+ }
+ .buscador{
+     width: 20rem;
+ }
+ .buscador input{
+     background-color: #ffffff7e;
+     border: none;
+ }
+ 
+ .container-jyf{
+     background-color: var(--color2);
+ }
+ .header-j, .header-j2{
+     height: 45vh !important;
+ }
+ .header-j div,.header-j2 div{
+     width: 45%;
+     height: 100%;    
+     font-family: var(--font2);
+ }
+ .header-j div{
+     background-color: #b5cbdb;
+ }
+ .header-j2 div{
+     background-color: #c4dbb5;
+     
+ }
+ 
+ .header-j div h5, .header-j2 div h5 {
+     font-size: 3rem;
+     
+ }
+ 
+ .header-j div h5{
+     text-shadow: var(--color5) -3px 1px 1px;
+ }
+ 
+ .header-j2 div h5{
+     text-shadow: var(--color6) -3px 1px 1px;
+ }
+ .img-header-j{
+     width: 100%;
+     height: 100%;
+ }
+ .img-header-j .img, .img-header-j .img2{
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+ }
+ .img-header-j .img{
+     object-position: bottom;
+ }
+ 
+ .error-404{
+     height: 70vh;
+     width: 90%;
+ }
+ .error-404 div{
+     width: 45%;
+     height: 100%;
+ }
+ .error-404 div p{
+     font-size: 2rem;
+ }
+ .error-404 div img{
+     width: 90%;
+ }
+ 
+ 
 
 /*-------------------footer------------------------*/
 footer{
     min-height: 8vh;
-    background-color: var(--color3);
+    background-color: var(--colorligth2);
     display: flex;
-    align-items: center;
-    padding: 0.5rem;
-    flex-direction: column;
-    
+    align-items: flex-start;
+        padding: 0.5rem;
+        justify-content: space-evenly;
+        border-top: 1px solid var(--colordetails2);
 }
+.footer__col1{
+display: flex;
+flex-direction: column;
+text-align: center;
 
+}
+.footer__col2{
+    display: flex;
+flex-direction: column;
+}
+.footer__col3{
+    display: flex;
+flex-direction: column;
+}
+.footer__col4{
+    display: flex;
+flex-direction: column;
+}
+.developers{
+    display: flex;
+    flex-direction: column;
+}
+.footer__list{
+    display: flex;
+}
+.footer__list__item{
+    list-style-type: none;
+}
+/*
 .footer__img{
     height: 2rem;
     background-image: url(../assets/logopetshop.png);
@@ -377,9 +416,7 @@ footer{
     background-repeat: no-repeat;
     background-position: center;
 }
-.footer__list{
-    display: flex;
-}
+
 .footer__list__link{
     text-decoration: none;
 }
@@ -434,20 +471,12 @@ h6{
 
 /*-------------------media querys------------------------*/
 
-
-
-
-
-
-
-
-
-
 /*---------------------------------contact-----------------------*/
 
-#contactform {
+/*#contactform {
     background-color: rgba(255, 125, 0, 0.5);
     padding: 2% 0 2% 0;
+    box-shadow: -2px 11px 5px -4px rgba(0,0,0,0.75);
 }
 
 #headercontact {
@@ -458,11 +487,55 @@ h6{
     align-items: center;
 }
 
+.input label {
+    position: absolute;
+    left: 1rem;
+    bottom: 0.1rem;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+    color: grey;
+}
+
+.input {
+    position: relative;
+}
+
+#labeltext {
+    position: absolute;
+    left: 1rem;
+    bottom: 2rem;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+    color: grey;
+}
+
 input[type= "text"], select, textarea, [type= "checkbox"] {
     padding: 0;
     margin-left: 1rem;
     position: relative;
+    border: none;
+    border-bottom: 2px solid silver;
+    outline: none;
  }
+
+ input .input {
+    
+ }
+
+ .input input:focus ~label, 
+ .input input:valid ~label {
+    transform: translateY(-1.6rem);
+    font-size: 0.6rem;
+    color: black;
+ } 
+
+ .input input:focus ~#labeltext, 
+ .input input:valid ~#labeltext {
+    transform: translateY(-1.2rem);
+    font-size: 0.6rem;
+    color: black;
+ } 
+
 
 #headercontact p {
     font-size: 15px;

@@ -53,7 +53,7 @@
                     <div v-for="articulo in articulosCarrito">
                       <div class="d-flex justify-content-between">
                         <img :src="articulo.imagen" style="height: 5rem" alt="...">
-                        <p>{{articulo.nombre}}</p>                       
+                        <p>{{articulo.nombre}}</p>
                         <i class="bi bi-x-circle" @click="eliminarCarrito(articulo)"></i>
                       </div>
                     </div>
@@ -74,24 +74,6 @@
           </div>
         </div>
       </nav>
-      <!-- carousel -->
-
-      <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active slide">
-            <img src="./assets/banner1.jpeg" class="d-block w-100 slide" alt="...">
-          </div>
-          <div class="carousel-item slide">
-            <img src="./assets/banner2.jpeg" class="d-block w-100 slide" alt="...">
-          </div>
-          <div class="carousel-item slide">
-            <img src="./assets/banner3.jpeg" class="d-block w-100 slide" alt="...">
-          </div>
-          <div class="carousel-item slide">
-            <img src="./assets/banner4.jpeg" class="d-block w-100 slide" alt="...">
-          </div>
-        </div>
-      </div>
 
 
       <div class="inicio">
@@ -101,193 +83,199 @@
           <button class="btn"> <a href="#profesionales" class="cta">Conoce nuestros profesionales</a> </button>
         </div>
         <img src="./assets/perrito.jpg" class="inicio__img" alt="perrito">
+
+
+      </div>
+
+  </div>
+
+  </header>
+
+  <!-- MAIN -->
+  <main>
+    <!-- sections -->
+
+    <!-- about -->
+    <section class="media__about">
+      <div class="media list-features">
+        <div class="media-left">
+          <a href="#mapa">Servicio a domicilio</a>
+        </div>
+        <div class="media-body">
+          <i class="bi bi-truck media__img"></i>
+
+          <p> consultar zonas de cobertura</p>
+        </div>
+      </div>
+      <div class="vr"></div>
+      <div class="media list-features">
+        <div class="media-left">
+          <a href="./farmacia.html">La mejor salud</a>
+        </div>
+        <div class="media-body">
+          <i class="bi bi-arrow-repeat media__img"></i>
+
+          <p>y accesorios para tu mascotas</p>
+        </div>
+      </div>
+  
+      <div class="vr"></div>
+      <div class="media list-features">
+        <div class="media-left align-self-center mr-1 mr-sm-4">
+          <a href="./contacto.html">24/7siempre en línea</a>
+        </div>
+        <div class="media-body">
+          <i class="bi bi-chat-dots media__img"></i>
+
+          <p>chatea con nosotros</p>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- doctors -->
+    <section class="doctors" id="profesionales">
+      <div class="doctors__container">
+        <div class="card">
+          <div class="card__img1"></div>
+          <div class="card-body">
+            <h5 class="card-title">Dra. Ana Aguilar</h5>
+            <p class="card-text">En MADALU Pet Shop seleccionamos los mejores profesionales veterinarios, quienes
+              continúan en capacitación y formación constante, para darle la más cálida y profesional atención a tu
+              mascota.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__img2"></div>
+          <div class="card-body">
+            <h5 class="card-title">Dr. Tomás Cisneros</h5>
+            <p class="card-text">Pensados para la comodidad del paciente y del cliente, nuestros consultorios cumplen
+              con los más altos estándares de calidad veterinaria para la atención de tu mascota.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__img3"></div>
+          <div class="card-body">
+            <h5 class="card-title">Dr. Juan Perez</h5>
+            <p class="card-text">Veterinarios a Domicilio, Laboratorios de Análisis Clínicos, Microchip de
+              Identificación, Limpieza Dental, Castraciones, Cesáreas.</p>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card__img4"></div>
+          <div class="card-body">
+            <h5 class="card-title">Dra. Juana Albornoz</h5>
+            <p class="card-text">Nuestra compañera, especialista en fisioterapia y rehabilitación, es la encargada del
+              servicio. Resulta muy beneficiosa en casos de artrosis, después de cirugías…</p>
+          </div>
+        </div>
+      </div>
+
+      <section class="marcas__about">
+        <h4>Empresas que nos acompañan</h4>
+        <div class="marca__items">
         
-        
+    <img src="./assets/" alt="" srcset="">
+        <div class="vr"></div>
+        <img src="./assets/" alt="" srcset="">
+
+        <div class="vr"></div>
+        <img src="./assets/" alt="" srcset="">
+
+        <div class="vr"></div>
+        <img src="./assets/" alt="" srcset="">
+
       </div>
-      
-      </div>
-
-    </header>
-
-    <!-- MAIN -->
-    <main>
-      <!-- sections -->
-      
-      <!-- about -->
-      <section class="media__about">
-        <div class="media list-features">
-          <div class="media-left">
-            <a href="#mapa">Servicio a domicilio</a>
-          </div>
-          <div class="media-body">
-            <i class="bi bi-truck media__img"></i>
-
-            <p> consultar zonas de cobertura</p>
-          </div>
-        </div>
-        <div class="vr"></div>
-        <div class="media list-features">
-          <div class="media-left">
-            <a href="./farmacia.html">La mejor salud</a>
-          </div>
-          <div class="media-body">
-            <i class="bi bi-arrow-repeat media__img"></i>
-
-            <p>y accesorios para tu mascotas</p>
-          </div>
-        </div>
-        <!--
-        <div class="vr"></div>
-        <div class="media list-features">
-          <div class="media-left">
-            <a href="#">Pago seguro</a>
-          </div>
-          <div class="media-body">
-            <i class="bi bi-credit-card-2-front media__img"></i>
-       
-            <p>100% </p>
-          </div>
-        </div>
-      -->
-        <div class="vr"></div>
-        <div class="media list-features">
-          <div class="media-left align-self-center mr-1 mr-sm-4">
-            <a href="./contacto.html">24/7siempre en línea</a>
-          </div>
-          <div class="media-body">
-            <i class="bi bi-chat-dots media__img"></i>
-
-            <p>chatea con nosotros</p>
-          </div>
-        </div>
-
       </section>
+  
 
-      <!-- doctors -->
-      <section class="doctors" id="profesionales">
-        <div class="doctors__container d-flex flex-wrap">
-          <div class="card">
-            <div class="card__img1"></div>
-            <div class="card-body">
-              <h5 class="card-title fw-bold">Dra. Ana Aguilar</h5>
-              <p class="card-text fw-bold">En MADALU Pet Shop seleccionamos los mejores profesionales veterinarios, quienes
-                continúan en capacitación y formación constante, para darle la más cálida y profesional atención a tu
-                mascota.</p>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card__img2"></div>
-            <div class="card-body">
-              <h5 class="card-title fw-bold">Dr. Tomás Cisneros</h5>
-              <p class="card-text fw-bold">Pensados para la comodidad del paciente y del cliente, nuestros consultorios cumplen
-                con los más altos estándares de calidad veterinaria para la atención de tu mascota.</p>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card__img3"></div>
-            <div class="card-body">
-              <h5 class="card-title fw-bold">Dr. Juan Perez</h5>
-              <p class="card-text fw-bold">Veterinarios a Domicilio, Laboratorios de Análisis Clínicos, Microchip de
-                Identificación, Limpieza Dental, Castraciones, Cesáreas.</p>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card__img4"></div>
-            <div class="card-body">
-              <h5 class="card-title fw-bold">Dra. Juana Albornoz</h5>
-              <p class="card-text fw-bold">Nuestra compañera, especialista en fisioterapia y rehabilitación, es la encargada del
-                servicio. Resulta muy beneficiosa en casos de artrosis, después de cirugías…</p>
-            </div>
-          </div>
-        </div>
+    </section>
+    <!-- MAPA -->
+    <section class="ubicacion">
+      <div class="ubicacion_text">
+        <h3>Nos encontras en:</h3>
+        <p>Rio de Janeiro 300, Caballito(Caba)</p>
 
-      </section>
-      <!-- MAPA -->
-      <section class="ubicacion">
-        <div class="ubicacion_text">
-          <h3>Nos encontras en:</h3>
-          <p>Rio de Janeiro 300, Caballito(Caba)</p>
-        </div>
-
-        <div>
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.698031802572!2d-58.4304098!3d-34.6117966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca429815227f%3A0x5d302e497c2cda87!2sR%C3%ADo%20de%20Janeiro%20300%2C%20C1405CCB%20CABA!5e0!3m2!1ses-419!2sar!4v1666719232764!5m2!1ses-419!2sar"
-            width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade" id="mapa"></iframe>
-        </div>
-      </section>
-
-      
-    </main>
-    <footer>
-
-      <div class="footertop">
-        <div class="footer__left">
-          <div class="container footer__img"></div>
-
-          <div class="text-copyright">© 2022 Madalu. Es una marca registrada.</div>
-        </div>
-
-        <div class="vr"></div>
-
-        <div class="footer__rigth">
-            <div class="footer__content" id="navbarNav">
-              <ul class="footer__list">
-                <li class="footer__list__item">
-                  <a class="footer__list__link active fw-bold" aria-current="page" href="contacto.html"><i
-                      class="uil uil-phone-alt"></i></a>
-                </li>
-                <li class="footer__list__item">
-                  <a class="footer__list__link active fw-bold" aria-current="page" href="index.html"><i
-                      class="uil uil-whatsapp"></i></a>
-                </li>
-                <li class="footer__list__item">
-                  <a class="footer__list__link active fw-bold" aria-current="page" href="farmacia.html"><i
-                      class="uil uil-facebook-f"></i></a>
-                </li>
-                <li class="footer__list__item">
-                  <a class="footer__list__link active fw-bold" aria-current="page" href="juguetes.html"><i
-                      class="uil uil-instagram"></i></a>
-                </li>
-                <li class="footer__list__item">
-                  <a class="footer__list__link active fw-bold" aria-current="page" href="juguetes.html"><i
-                      class="uil uil-map-marker"></i></a>
-                </li>
-              </ul>
-            </div>
-          </div>
       </div>
-      
-
-      <div class="footer__bootom">
-        <h6>Desarrollado por:</h6>
-        <div class="developers">
-          <button type="button" class="btn btn-light">
-            <a class="btn__footer" href="https://www.linkedin.com/in/dalilamf/">
-              Dalila Mistura <i class="bi bi-linkedin"></i></a>
-          </button>
-          <button type="button" class="btn btn-light">
-            <a class="btn__footer" href="https://www.linkedin.com/in/matíasquiroga/">
-              Matías Quiroga <i class="bi bi-linkedin"></i></a>
-          </button>
-          <button type="button" class="btn btn-light">
-            <a class="btn__footer" href="https://www.linkedin.com/in/luca-leon-guaymas-600651222/">
-              Luca Leon Guaymas <i class="bi bi-linkedin"></i></a>
-          </button>
-          <button type="button" class="btn btn-light">
-            <a class="btn__footer" href="https://www.linkedin.com/in/alejandro-ignacio-godino/">
-              Alejandro Godino <i class="bi bi-linkedin"></i></a>
-          </button>
-        </div>
+      <div class="ubicacion__phone">
+        <ul class="footer__list">
+          <li class="footer__list__item">
+            <a class="footer__list__link active fw-bold" aria-current="page" href="contacto.html"><i
+                class="uil uil-phone-alt"></i></a>
+          </li>
+          <li class="footer__list__item">
+            <a class="footer__list__link active fw-bold" aria-current="page" href="index.html"><i
+                class="uil uil-whatsapp"></i></a>
+          </li>
+        </ul>
       </div>
-    </footer>
+      <div>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3283.698031802572!2d-58.4304098!3d-34.6117966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca429815227f%3A0x5d302e497c2cda87!2sR%C3%ADo%20de%20Janeiro%20300%2C%20C1405CCB%20CABA!5e0!3m2!1ses-419!2sar!4v1666719232764!5m2!1ses-419!2sar"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" id="mapa"></iframe>
+      </div>
+    </section>
 
-   
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
-      crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="./js/main.js"></script>
+
+  </main>
+  <footer>
+
+    <div class="footer__col1">
+
+      <div class="container footer__img"></div>
+
+      <div class="text-copyright">© 2022 Madalu. Es una marca registrada.</div>
+    </div>
+
+    <div class="vr"></div>
+
+    <div class="footer__col2">
+      <h6>Paginas amigas</h6>
+    </div>
+
+    <div class="vr"></div>
+    <div class="footer__col3">
+      <h6>Desarrollado por:</h6>
+      <div class="developers">
+        <a class="btn__footer" href="https://www.linkedin.com/in/dalilamf/">
+          Dalila Mistura <i class="bi bi-linkedin"></i></a>
+        <a class="btn__footer" href="https://www.linkedin.com/in/matíasquiroga/">
+          Matías Quiroga <i class="bi bi-linkedin"></i></a>
+        <a class="btn__footer" href="https://www.linkedin.com/in/luca-leon-guaymas-600651222/">
+          Luca Leon Guaymas <i class="bi bi-linkedin"></i></a>
+        <a class="btn__footer" href="https://www.linkedin.com/in/alejandro-ignacio-godino/">
+          Alejandro Godino <i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+    <div class="vr"></div>
+    <div class="footer__col4">
+      <h6>Sigue conectado</h6>
+      <ul class="footer__list">
+
+        <li class="footer__list__item">
+          <a class="footer__list__link active fw-bold" aria-current="page" href="farmacia.html"><i
+              class="uil uil-facebook-f"></i></a>
+        </li>
+        <li class="footer__list__item">
+          <a class="footer__list__link active fw-bold" aria-current="page" href="juguetes.html"><i
+              class="uil uil-instagram"></i></a>
+        </li>
+
+      </ul>
+    </div>
+    </div>
+    </div>
+
+
+
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="./js/main.js"></script>
 
   </div>
 </body>
