@@ -28,6 +28,7 @@ body{
 }
 
 /*-------------------header------------------------*/
+
 /*
 header{
 max-width: 100%;
@@ -62,6 +63,7 @@ nav{
     background-color: var(--colorligth)!important;
     display: flex!important;
     border-bottom: 1px solid var(--colordark);
+   
 }
 /*
 .navbar__img{
@@ -322,6 +324,46 @@ iframe{
 }
   /*-------------------fin modal---------------------------*/
 
+  /*-------------------prueba nav effect---------------------------*/
+.navbar{
+    padding: 1rem;
+}
+
+  .nav-link{
+    
+        position: relative;
+        text-decoration: none;
+        font-family: "Poppins", sans-serif;
+        color: #a0a0a0;
+        font-size: 18px;
+        letter-spacing: 0.5px;
+        padding: 0 10px;
+      
+  }
+  .nav-link:before,
+  .nav-link:after {
+  content: "";
+  position: absolute!important;
+  height: 3px!important;
+  width: 0!important;
+  background-color: var(--colordetails2)!important;
+  transition: 0.5s!important;
+}
+.nav-link:after {
+  left: 0!important;
+  bottom: -10px!important;
+}
+.nav-link:before {
+  right: 0!important;
+  top: -10px!important;
+}
+.nav-link:hover {
+  color: #3a0e0e!important;
+}
+.nav-link:hover:after,
+.nav-link:hover:before {
+  width: 100%!important;
+}
 /*------------------- cartas ------------------------*/
 /*.card-art{
     width: 13rem;
