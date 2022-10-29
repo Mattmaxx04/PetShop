@@ -153,6 +153,9 @@ margin:0.5rem;
 .marcas__about{
     display: flex;
 }
+.marca__items{
+    display: flex;
+}
 .doctors{
     margin:1rem;
     background:var(--colorligth2);
