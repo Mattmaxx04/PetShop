@@ -150,9 +150,29 @@ margin:0.5rem;
 .media__items{
     display: flex;
 }
-.marcas__about{
+.media__items{
     display: flex;
 }
+.marca{
+    width: 20%;
+
+}
+.marcas__about{
+    display: flex;
+    margin-top: 0.5rem;
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+    background: var(--colorligth);
+}
+.marca__items{
+    gap: 1rem;
+    display: flex;
+    
+    justify-content: space-evenly;
+    padding: 1rem;
+}
+
 .doctors{
     margin:1rem;
     background:var(--colorligth2);
