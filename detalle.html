@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tienda en línea de alimentos super premium para mascotas">
+  <meta name="keywords" content="comida, mascotas, gatos, perros">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
+  <title>Detalle</title>
+</head>
+
+<body>
+  <div id="app">
+    <header>
+      <nav class="navbar navbar-expand-lg ">
+        <div class="container navbar__img"></div>
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link fw-bold" aria-current="page" href="">Inicio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link  fw-bold" aria-current="page" href="farmacia.html">Farmacia</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link  fw-bold" aria-current="page" href="juguetes.html">Juguetes</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link  fw-bold" aria-current="page" href="contacto.html">Contacto</a>
+              </li>
+              <li class="nav-item">
+                <!-- BOTONCITO DEL CARRITO QUE TE ABRE EL OFFCANVA -->
+                <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                  <i class="uil uil-shopping-cart"></i>
+                </a>
+                
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- MAIN -->  
+
+      
+       
+      <main class="d-flex justify-content-evenly flex-column align-items-center main__pagos">
+
+        <section class="pagos d-flex flex-row gap-3 justify-content-evenly align-items-center flex-wrap">
+          <div class="form_pagos">
+            <h4 class="text-center">Datos de contacto</h4>
+           <form action="" class="d-flex flex-column justify-content-center align-items-center">
+             <input type="text" name="" id="" placeholder="Nombre y apellido">
+             <input type="text" placeholder="direccion">
+             <input type="email" name="" id="" placeholder="mimail@gmail.com">
+             <input type="number" name="" id="" placeholder="codigo postal">
+             <select name="" id="">
+               <option selected="selected">Provincia</option>
+               <option value="BS">Buenos Aires</option>
+               <option value="cata">Catamarca</option>
+               <option value="Chaco">Chaco</option>
+               <option value="Chub">Chubut</option>
+               <option value="CF">Capital Federal</option>
+               <option value="Cordoba">Córdoba</option>
+               <option value="ER">Entre Ríos</option>            
+               <option value="Formosa">Formosa</option>
+               <option value="Juju">Jujuy</option>
+               <option value="Pampa">La Pampa</option>
+               <option value="Rioja">La Rioja</option>
+               <option value="Mendoza">Mendoza</option>
+               <option value="Misiones">Misiones</option>
+               <option value="Neuquen">Neuquén</option>
+               <option value="RíoNegro">Río Negro</option>
+               <option value="Salta">Salta</option>
+               <option value="SanJuan">San Juan</option>
+               <option value="SanLuis">San Luis</option>
+               <option value="SFE">Santa Fe</option>            
+               <option value="Santa Cruz">Santa Cruz</option>
+               <option value="Stigo">Santiago del Estero</option>
+               <option value="Fuego">Tierra del Fuego</option>
+               <option value="Tucuman">Tucumán</option>
+             </select>
+             <input type="text" placeholder="ciudad">
+           </form>
+   
+          </div>
+   
+
+           <div>
+            <h4 class="text-center">Datos de pago</h4>
+            <form action="" class="form__tarjeta d-flex flex-column align-items-center mt-2 gap-2">
+              <input type="number" placeholder="Numeros de la tarjeta">
+              <input type="text" placeholder="Titular">
+
+              <div class="d-flex flex-column mt-2">
+                <label for="month">Vencimiento:</label>
+                <input type="month" name="month" id="mes" >
+              </div>
+              
+              <div class="d-flex gap-3 mt-2">
+                <label for="codigo">Código de seguridad:</label>
+                <input class="seguridad w-25" type="number" placeholder="123" id="codigo" >
+              </div>
+            </form>
+           </div>
+
+         </section>
+         <section class="pagos__footer d-flex justify-content-evenly align-items-center flex-wrap">
+
+          <div class="card__tarjeta">
+            <div class="card__info">
+              <div class="card__logo">Creditcard</div>
+              <div class="card__chip">
+                <svg class="card__chip-lines" role="img" width="20px" height="20px" viewBox="0 0 100 100" aria-label="Chip">
+                  <g opacity="0.8">
+                    <polyline points="0,50 35,50" fill="none" stroke="#000" stroke-width="2" />
+                    <polyline points="0,20 20,20 35,35" fill="none" stroke="#000" stroke-width="2" />
+                    <polyline points="50,0 50,35" fill="none" stroke="#000" stroke-width="2" />
+                    <polyline points="65,35 80,20 100,20" fill="none" stroke="#000" stroke-width="2" />
+                    <polyline points="100,50 65,50" fill="none" stroke="#000" stroke-width="2" />
+                    <polyline points="35,35 65,35 65,65 35,65 35,35" fill="none" stroke="#000" stroke-width="2" />
+                    <polyline points="0,80 20,80 35,65" fill="none" stroke="#000" stroke-width="2" />
+                    <polyline points="50,100 50,65" fill="none" stroke="#000" stroke-width="2" />
+                    <polyline points="65,65 80,80 100,80" fill="none" stroke="#000" stroke-width="2" />
+                  </g>
+                </svg>
+                <div class="card__chip-texture"></div>
+              </div>
+              <!-- <div class="card__type">debit</div> -->
+              <div class="card__number">
+                <span class="card__digit-group">0000</span>
+                <span class="card__digit-group">0021</span>
+                <span class="card__digit-group">4748</span>
+                <span class="card__digit-group">3647</span>
+              </div>
+              <div class="card__valid-thru" aria-label="Valid thru">Valid<br>thru</div>
+              <div class="card__exp-date"><time datetime="2038-01">01/38</time></div>
+              <div class="card__name" aria-label="Dee Stroyer">WDL</div>
+              <!-- <div class="card__vendor" role="img" aria-labelledby="card-vendor">
+                <span id="card-vendor" class="card__vendor-sr">Mastercard</span>
+              </div> -->
+            </div>
+            <div class="card__texture"></div>
+          </div>
+
+          <table>
+            <thead>
+              <tr>
+                <th colspan="3">Detalle de compra</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>
+                  Producto
+                </th>
+                <th>
+                  Cantidad
+                </th>
+                <th>
+                  Subtotal
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  Producto 1
+                </td>
+                <td>
+                  Cantidad
+                </td>
+                <td>
+                  Total
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Producto 2
+                </td>
+                <td>
+                  Cantidad
+                </td>
+                <td>
+                  Total
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  Producto 3
+                </td>
+                <td>
+                  Cantidad
+                </td>
+                <td>
+                  Total
+                </td>
+              </tr>
+              <tfoot>
+                <tr>
+                  <th>
+                    Total
+                  </th>
+                  <th colspan="2">$ 123</th>
+                </tr>
+                
+              </tfoot>
+  
+            </tbody>
+           </table>
+
+         </section>
+         <form action="" class="d-block">
+          <button class="btn btn-factura" data-bs-toggle="modal" data-bs-target="#exampleModal" type="button" >Facturar</button>
+         </form>
+         
+      </main>
+
+     <!-- ------ MODAL -------- -->
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">Facturación</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body d-flex justify-content-center">
+              <table>
+                <thead>
+                  <tr>
+                    <th colspan="3">Detalle de compra</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>
+                      Producto
+                    </th>
+                    <th>
+                      Cantidad
+                    </th>
+                    <th>
+                      Subtotal
+                    </th>
+                  </tr>
+                  <tr>
+                    <td>
+                      Producto 1
+                    </td>
+                    <td>
+                      Cantidad
+                    </td>
+                    <td>
+                      Total
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Producto 2
+                    </td>
+                    <td>
+                      Cantidad
+                    </td>
+                    <td>
+                      Total
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      Producto 3
+                    </td>
+                    <td>
+                      Cantidad
+                    </td>
+                    <td>
+                      Total
+                    </td>
+                  </tr>
+                  <tfoot>
+                    <tr>
+                      <th>
+                        Total
+                      </th>
+                      <th colspan="2">$ 123</th>
+                    </tr>
+                    
+                  </tfoot>
+      
+                </tbody>
+               </table>
+            </div>
+            <div class="modal-footer d-flex justify-content-between">
+              <p>madalu</p>
+              <button type="button" class="btn btn-compra">Confirmar compra</button>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- ------ OFFCANVA CARRITO -------- -->
+      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasExampleLabel">Detalle</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <div>
+            <ul class="">
+              <li>
+                <div v-for="articulo in articulosCarrito">
+                  <div class="d-flex justify-content-between">
+                    <img :src="articulo.imagen" style="height: 5rem" alt="...">
+                    <p>{{articulo.nombre}}</p>                       
+                    <i class="bi bi-x-circle" @click="eliminarCarrito(articulo)"></i>
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="d-flex p-2 justify-content-between">
+                  <p>Total</p>
+                  <p>${{Total}}</p>
+                </div>
+                <div class="dropdown-divider"></div>
+                <div class="d-grid gap-2">
+                  <button class="btn btn-primary m-2" type="button">Enviar pedido</button>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    <footer>
+
+      <div class="footertop">
+        <div class="footer__left">
+          <div class="container footer__img"></div>
+
+          <div class="text-copyright">© 2022 Madalu. Es una marca registrada.</div>
+        </div>
+
+        <div class="vr"></div>
+
+        <div class="footer__rigth">
+            <div class="footer__content" id="navbarNav">
+              <ul class="footer__list">
+                <li class="footer__list__item">
+                  <a class="footer__list__link active fw-bold" aria-current="page" href="contacto.html"><i
+                      class="uil uil-phone-alt"></i></a>
+                </li>
+                <li class="footer__list__item">
+                  <a class="footer__list__link active fw-bold" aria-current="page" href="index.html"><i
+                      class="uil uil-whatsapp"></i></a>
+                </li>
+                <li class="footer__list__item">
+                  <a class="footer__list__link active fw-bold" aria-current="page" href="farmacia.html"><i
+                      class="uil uil-facebook-f"></i></a>
+                </li>
+                <li class="footer__list__item">
+                  <a class="footer__list__link active fw-bold" aria-current="page" href="juguetes.html"><i
+                      class="uil uil-instagram"></i></a>
+                </li>
+                <li class="footer__list__item">
+                  <a class="footer__list__link active fw-bold" aria-current="page" href="juguetes.html"><i
+                      class="uil uil-map-marker"></i></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+      </div>
+      
+
+      <div class="footer__bootom">
+        <h6>Desarrollado por:</h6>
+        <div class="developers">
+          <button type="button" class="btn btn-light">
+            <a class="btn__footer" href="https://www.linkedin.com/in/dalilamf/">
+              Dalila Mistura <i class="bi bi-linkedin"></i></a>
+          </button>
+          <button type="button" class="btn btn-light">
+            <a class="btn__footer" href="https://www.linkedin.com/in/matíasquiroga/">
+              Matías Quiroga <i class="bi bi-linkedin"></i></a>
+          </button>
+          <button type="button" class="btn btn-light">
+            <a class="btn__footer" href="https://www.linkedin.com/in/luca-leon-guaymas-600651222/">
+              Luca Leon Guaymas <i class="bi bi-linkedin"></i></a>
+          </button>
+          <button type="button" class="btn btn-light">
+            <a class="btn__footer" href="https://www.linkedin.com/in/alejandro-ignacio-godino/">
+              Alejandro Godino <i class="bi bi-linkedin"></i></a>
+          </button>
+        </div>
+      </div>
+    </footer>
+
+   
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./js/main.js"></script>
+   
+
+  </div>
+</body>
+
+</html>
