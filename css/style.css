@@ -188,6 +188,9 @@ justify-content: center;
 }
 
 /*pruebas cards*/
+
+
+
 .flip-card {
     background-color: transparent;
     width: 250px !important;
@@ -228,6 +231,11 @@ justify-content: center;
     color: var(--colordark);
     transform: rotateY(180deg);
     border-radius:1rem;
+}
+
+
+.img_container{
+    height: 50%;
 }
 .img-art{    
     border-radius: 1rem;
