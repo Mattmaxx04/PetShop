@@ -360,8 +360,13 @@ nav {
 
 }
 
-
+.navbar-collapse{
+    justify-content: flex-end;
+    margin-right: 3rem;
+    padding-top: 1rem;
+}
 .navbar__img{
+    width: 50%;
     display: flex;
     justify-content: center!important;
     align-items: normal!important;
