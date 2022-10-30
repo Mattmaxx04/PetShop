@@ -24,7 +24,6 @@
       <nav class="navbar navbar-expand-lg ">
         <div class="container navbar__img"></div>
         <div class="container-fluid">
-          <a class="navbar-brand" href="#"></a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -32,27 +31,26 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active fw-bold" aria-current="page" href="index.html">Inicio</a>
+                <a class="nav-link  fw-bold" aria-current="page" href="./index.html">Inicio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active fw-bold" aria-current="page" href="">Farmacia</a>
+                <a class="nav-link  active fw-bold" aria-current="page" href="">Farmacia</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active fw-bold" aria-current="page" href="juguetes.html">Juguetes</a>
+                <a class="nav-link  fw-bold" aria-current="page" href="./juguetes.html">Juguetes</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active fw-bold" aria-current="page" href="contacto.html">Contacto</a>
-              </li>
-              <li class="nav-item dropdown">
-                <!-- BOTONCITO DEL CARRITO QUE TE ABRE EL OFFCANVA -->
-                <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-                  <i class="uil uil-shopping-cart"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
+              <a class="nav-link  fw-bold" aria-current="page" href="./contacto.html">Contacto</a>
+            </li>
+            
+          </ul>
         </div>
-      </nav>
+      </div>
+      <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+                aria-controls="offcanvasExample">
+                <i class="uil uil-shopping-cart"></i>
+              </a>
+    </nav>
 
     </header>
 
@@ -61,13 +59,14 @@
       
 
       {{filtro}}
-      <div class="d-flex justify-content-center filter">
+
+      <div class="d-flex justify-content-center gap-3 filter">
         <div class="btn-group">
-          <button class="btn bg-dark text-white dropdown-toggle rounded-0 border-0" type="button"
+          <button class="btn bg-dark text-white dropdown-toggle border-0" type="button"
             data-bs-toggle="dropdown" aria-expanded="false">
             Ordenar por:
           </button>
-          <ul class="dropdown-menu rounded-0">
+          <ul class="dropdown-menu">
             <li> <label for="Max">Mayor precio
                 <input v-model="inputDrop" type="radio" id="Max" value="Max">
               </label></li>
@@ -108,19 +107,22 @@
                   <div class="img_container">
                     <img :src="articulo.imagen" class="img-art" alt="{{articulo.nombre}}">
                   </div>                  
-                  <div class="contenido__flip d-flex flex-column align-items-center justify-content-evenly">
+                  <div class="contenido__flip d-flex pt-1 flex-column align-items-center justify-content-around">
                     <h6 class="text-center text-dark">{{articulo.nombre}}</h6>
-                    <p class="card-text precio-art pt-1 m-0">${{articulo.precio}}</p>
                     <p v-if="articulo.stock<=5" class="card-text text-start text-danger fw-bolder">Pocas unidades!!!</p>
+                    <p class="card-text precio-art">${{articulo.precio}}</p>
                   </div>
                 </div>
 
-                <div class="flip-card-back d-flex flex-column align-content-center justify-content-center">                 
-                  <div class="contenido-back-card d-flex flex-column justify-content-between">
+                <div class="flip-card-back d-flex flex-column align-content-center justify-content-around">                 
+                  <div class="contenido-back-card d-flex flex-column justify-content-between p-1">
+                   <div class="contenido-arriba-card">
                     <h6 class="tittle__articulo">{{articulo.nombre}}</h6>
+                    
                     <p class="descripcion__articulo">{{articulo.descripcion}}</p>
                     <p class="descripcion__articulo fw-bolder">Stock: {{articulo.stock}} u.</p>
                     
+                   </div>
                     <div class="d-flex justify-content-evenly align-content-center">
                       <p class="fw-bold precio-art m-0 d-flex">${{articulo.precio}}</p>
                       <button type="button" class="btn btn-carrito">
@@ -152,20 +154,34 @@
 
     <!-- ------ OFFCANVA CARRITO -------- -->
     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-      <div class="offcanvas-header">
+      <div class="offcanvas-header border-bottom">
         <h5 class="offcanvas-title" id="offcanvasExampleLabel">Detalle</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
-        <div>
+        <div v-if="articulosCarrito.length==0" class="d-flex h-100 flex-column align-items-center justify-content-evenly">
+          <p class="fw-bolder text-center" style="color: #477890;">Hola, tu carrito esta vacio 😔</p>
+          <img src="assets/dog-paw-animate.svg" alt="">
+        </div>
+        <div v-else class="h-100">
          
               <div v-for="articulo in articulosCarrito">
-                <div class="d-flex justify-content-between">
+                <div class="d-flex justify-content-between mb-1 border-bottom">
                   <img :src="articulo.imagen" style="height: 5rem" alt="{{articulo.nombre}}">
-                  <p>{{articulo.nombre}}</p>    
-                  <p>${{articulo.precio}}</p>
-                  <!-- <input type="number" min="1" max={{articulo.stock}} name="" id="">                     -->
-                  <i class="bi bi-x-circle" @click="eliminarCarrito(articulo)"></i>
+                  <div class="">
+                    <div class="d-flex flex-row-reverse gap-1 ms-1">
+                      <i class="uil uil-trash-alt" @click="eliminarCarrito(articulo)"></i>
+                      <h6>{{articulo.nombre}}</h6>    
+                      
+                      
+                    </div>
+                    <div class="d-flex carrito-input gap-1 justify-content-evenly">
+                     <p>${{articulo.precio}}</p>
+                     <p>x</p>
+                     <input type="number" min="1" max={{articulo.stock}} name="" id="">                   
+                     
+                    </div>
+                  </div>
                 </div>
               </div>
             
@@ -174,7 +190,8 @@
                 <p>${{totalCarrito}}</p>              </div>
               <div class="dropdown-divider"></div>
               <div class="d-grid gap-2">
-                <button class="btn btn-primary m-2" type="button">Enviar pedido</button>
+               
+                <a href="./detalle.html" class="btn btn-primary m-2" >Completar pedido</a>
               </div>
           
         </div>

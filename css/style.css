@@ -358,12 +358,21 @@ nav {
     border-bottom: 1px solid var(--colordark);
 
 }
-
-
+.navbar-nav{
+    align-items: center;
+}
+.navbar-collapse{
+    justify-content: flex-end;
+    margin-right: 3rem;
+    padding-top: 1rem;
+}
 .navbar__img{
-    display: flex;
-    justify-content: center!important;
-    align-items: normal!important;
+    width: 50%;
+    background-image: url(../assets/logo1.png);  
+    background-size:contain ;
+    background-repeat: no-repeat;
+    background-position: center; 
+    height: 3rem;
 }
 /*
 .nav-link{
@@ -491,63 +500,7 @@ main {
     justify-content: center;
 }
 
-/*pruebas cards*/
 
-
-
-.flip-card {
-    background-color: transparent;
-    width: 250px !important;
-    height: 350px !important;
-  }
-  
-  .flip-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    
-    border-radius: 1rem;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-    box-shadow: #d6d3d469 0px 4px 8px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
-  }
-  
-  .flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
-  }
-  
-  .flip-card-front, .flip-card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-  }
-  
-  .flip-card-front {
-    background-color: transparent;
-    color: black;
-  }
-  
-  .flip-card-back {
-    padding: .2rem;
-    color: var(--colordark);
-    transform: rotateY(180deg);
-    border-radius:1rem;
-}
-
-
-.img_container{
-    height: 50%;
-}
-.img-art{    
-    border-radius: 1rem;
-    width: 30%;
-    height: auto;
-    object-fit: contain;
-}
-/*fin */
 /*
 .card{
     width: 14rem!important;
@@ -796,8 +749,6 @@ iframe {
 
 /* Nuevo estilo de cartas */
 
-/*pruebas cards*/
-
 .flip-card {
     background-color: transparent;
     width: 250px !important;
@@ -865,6 +816,14 @@ iframe {
 }
 .descripcion__articulo{
     font-size: 15px;
+}
+/*fin */
+
+/* carrito estilo */
+.carrito-input input{
+    width: 4rem;
+    height: 1rem;
+    padding: 5px;
 }
 /*fin */
 
