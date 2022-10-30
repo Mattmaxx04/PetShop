@@ -196,26 +196,36 @@
       </div>
       <div class="offcanvas-body">
         <div>
-
-          <div v-for="articulo in articulosCarrito">
-            <div class="d-flex justify-content-between">
-              <img :src="articulo.imagen" style="height: 5rem" alt="{{articulo.nombre}}">
-              <p>{{articulo.nombre}}</p>
-              <p>${{articulo.precio}}</p>
-              <!-- <input type="number" min="1" max={{articulo.stock}} name="" id="">                     -->
-              <i class="bi bi-x-circle" @click="eliminarCarrito(articulo)"></i>
-            </div>
-          </div>
-
-          <div class="d-flex p-2 justify-content-between">
-            <p>Total</p>
-            <p>${{totalCarrito}}</p>
-          </div>
-
-          <div class="d-grid gap-2">
-            <a class="btn btn-primary m-2" href="">Continuar compra</a>
-          </div>
-
+         
+              <div v-for="articulo in articulosCarrito">
+                <div class="d-flex justify-content-between mb-1 border-bottom">
+                  <img :src="articulo.imagen" style="height: 5rem" alt="{{articulo.nombre}}">
+                  <div class="">
+                    <div class="d-flex flex-row-reverse gap-1 ms-1">
+                      <i class="uil uil-trash-alt" @click="eliminarCarrito(articulo)"></i>
+                      <h6>{{articulo.nombre}}</h6>    
+                      
+                      
+                    </div>
+                    <div class="d-flex carrito-input gap-1 justify-content-evenly">
+                     <p>${{articulo.precio}}</p>
+                     <p>x</p>
+                     <input type="number" min="1" max={{articulo.stock}} name="" id="">                   
+                     
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="d-flex p-2 justify-content-between">
+                <p>Total</p>
+                <p>${{totalCarrito}}</p>              </div>
+              <div class="dropdown-divider"></div>
+              <div class="d-grid gap-2">
+               
+                <a href="./detalle.html" class="btn btn-primary m-2" >Completar pedido</a>
+              </div>
+          
         </div>
       </div>
     </div>
