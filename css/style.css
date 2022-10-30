@@ -363,9 +363,12 @@ nav {
     align-items: center;
 }
 .navbar-collapse{
+    justify-content: flex-end;
+    margin-right: 3rem;
     padding-top: 1rem;
 }
 .navbar__img{
+    width: 50%;
     background-image: url(../assets/logo1.png);  
     background-size:contain ;
     background-repeat: no-repeat;
