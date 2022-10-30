@@ -19,7 +19,7 @@
 
     <header>
       <!-- NAV -->
-      
+
       <div v-cloak>
         {{pintarSuma}}
       </div>
@@ -46,26 +46,27 @@
                 <a class="nav-link active fw-bold" aria-current="page" href="contacto.html">Contacto</a>
               </li>
               <li class="nav-item">
-                <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+                  aria-controls="offcanvasExample">
                   <i class="uil uil-shopping-cart"></i>
                 </a>
-                
-              </li>      
+
+              </li>
             </ul>
           </div>
         </div>
-      </nav>      
-           
+      </nav>
+
 
 
     </header>
     <main>
-     
+
       <div v-cloak>
         {{filtro}}
       </div>
 
-     <!-- <section class="container header-j d-flex justify-content-center align-items-center mb-5 mt-5">
+      <!-- <section class="container header-j d-flex justify-content-center align-items-center mb-5 mt-5">
         <div class="d-flex align-items-center justify-content-center">
           <h5 class="text-center">Toda la diversión, en un solo lugar</h5>
         </div>
@@ -112,37 +113,38 @@
 
         <div v-for="articulo in articulos" class="">
           <div class=" d-flex justify-content-center flex-wrap gap-3">
-           <div class="flip-card">
-             <div class="flip-card-inner">
-               <div class="flip-card-front">
-                 <div class="img_container">
-                   <img :src="articulo.imagen" class="img-art" alt="{{articulo.nombre}}">
-                 </div>                  
-                 <div class="contenido__flip d-flex flex-column align-items-center justify-content-evenly">
-                   <h6 class="text-center text-dark">{{articulo.nombre}}</h6>
-                   <p class="card-text precio-art pt-1 m-0">${{articulo.precio}}</p>
-                   <p v-if="articulo.stock<=5" class="card-text text-start text-danger fw-bolder">Pocas unidades!!!</p>
-                 </div>
-               </div>
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <div class="img_container">
+                    <img :src="articulo.imagen" class="img-art" alt="{{articulo.nombre}}">
+                  </div>
+                  <div class="contenido__flip d-flex flex-column align-items-center justify-content-evenly">
+                    <h6 class="text-center text-dark">{{articulo.nombre}}</h6>
+                    <p class="card-text precio-art pt-1 m-0">${{articulo.precio}}</p>
+                    <p v-if="articulo.stock<=5" class="card-text text-start text-danger fw-bolder">Pocas unidades!!!</p>
+                  </div>
+                </div>
 
-               <div class="flip-card-back d-flex flex-column align-content-center justify-content-center">                 
-                 <div class="contenido-back-card d-flex flex-column justify-content-between">
-                   <h6 class="tittle__articulo">{{articulo.nombre}}</h6>
-                   <p class="descripcion__articulo">{{articulo.descripcion}}</p>
-                   <p class="descripcion__articulo fw-bolder">Stock: {{articulo.stock}} u.</p>
-                   
-                   <div class="d-flex justify-content-evenly align-content-center">
-                     <p class="fw-bold precio-art m-0 d-flex">${{articulo.precio}}</p>
-                     <button type="button" class="btn btn-carrito">
-                       <a class="text-black"><i class="uil uil-shopping-cart" @click="agregarCarrito(articulo)"></i></a></button>
-                   </div>
-                 </div>
-               </div>
-             </div>
-           </div>
-   
-   
-         </div>
+                <div class="flip-card-back d-flex flex-column align-content-center justify-content-center">
+                  <div class="contenido-back-card d-flex flex-column justify-content-between">
+                    <h6 class="tittle__articulo">{{articulo.nombre}}</h6>
+                    <p class="descripcion__articulo">{{articulo.descripcion}}</p>
+                    <p class="descripcion__articulo fw-bolder">Stock: {{articulo.stock}} u.</p>
+
+                    <div class="d-flex justify-content-evenly align-content-center">
+                      <p class="fw-bold precio-art m-0 d-flex">${{articulo.precio}}</p>
+                      <button type="button" class="btn btn-carrito">
+                        <a class="text-black"><i class="uil uil-shopping-cart"
+                            @click="agregarCarrito(articulo)"></i></a></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
 
         </div>
       </div>
@@ -186,34 +188,34 @@
       </div>
     </main>
 
-     <!-- ------ OFFCANVA CARRITO -------- -->
-     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <!-- ------ OFFCANVA CARRITO -------- -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
       <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="offcanvasExampleLabel">Detalle</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
         <div>
-         
-              <div v-for="articulo in articulosCarrito">
-                <div class="d-flex justify-content-between">
-                  <img :src="articulo.imagen" style="height: 5rem" alt="{{articulo.nombre}}">
-                  <p>{{articulo.nombre}}</p>    
-                  <p>${{articulo.precio}}</p>
-                  <!-- <input type="number" min="1" max={{articulo.stock}} name="" id="">                     -->
-                  <i class="bi bi-x-circle" @click="eliminarCarrito(articulo)"></i>
-                </div>
-              </div>
-            
-              <div class="d-flex p-2 justify-content-between">
-                <p>Total</p>
-                <p>${{Total}}</p>
-              </div>
-              
-              <div class="d-grid gap-2">
-                <a class="btn btn-primary m-2" href="">Continuar compra</a>
-              </div>
-          
+
+          <div v-for="articulo in articulosCarrito">
+            <div class="d-flex justify-content-between">
+              <img :src="articulo.imagen" style="height: 5rem" alt="{{articulo.nombre}}">
+              <p>{{articulo.nombre}}</p>
+              <p>${{articulo.precio}}</p>
+              <!-- <input type="number" min="1" max={{articulo.stock}} name="" id="">                     -->
+              <i class="bi bi-x-circle" @click="eliminarCarrito(articulo)"></i>
+            </div>
+          </div>
+
+          <div class="d-flex p-2 justify-content-between">
+            <p>Total</p>
+            <p>${{totalCarrito}}</p>
+          </div>
+
+          <div class="d-grid gap-2">
+            <a class="btn btn-primary m-2" href="">Continuar compra</a>
+          </div>
+
         </div>
       </div>
     </div>
@@ -222,18 +224,18 @@
     <footer>
 
       <div class="footer__col1">
-  
+
         <div class="container footer__img"></div>
-  
+
         <div class="text-copyright">© 2022 Madalu. Es una marca registrada.</div>
       </div>
-  
+
       <div class="vr"></div>
-  
+
       <div class="footer__col2">
         <h6>Paginas amigas</h6>
       </div>
-  
+
       <div class="vr"></div>
       <div class="footer__col3">
         <h6>Desarrollado por:</h6>
@@ -252,7 +254,7 @@
       <div class="footer__col4">
         <h6>Sigue conectado</h6>
         <ul class="footer__list">
-  
+
           <li class="footer__list__item">
             <a class="footer__list__link active fw-bold" aria-current="page" href="farmacia.html"><i
                 class="uil uil-facebook-f"></i></a>
@@ -261,10 +263,10 @@
             <a class="footer__list__link active fw-bold" aria-current="page" href="juguetes.html"><i
                 class="uil uil-instagram"></i></a>
           </li>
-  
+
         </ul>
-      </div>    
-      
+      </div>
+
     </footer>
 
 
