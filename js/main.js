@@ -56,14 +56,12 @@ createApp({
         this.articulosCarrito.push(articulo);
       }
       localStorage.setItem("favorito", JSON.stringify(this.articulosCarrito));
-      this.totalCarrito += articulo.precio;
     },
     eliminarCarrito(articulo) {
       this.articulosCarrito = this.articulosCarrito.filter(
         (articuloC) => articuloC != articulo
       );
       localStorage.setItem("favorito", JSON.stringify(this.articulosCarrito));
-      this.totalCarrito -= articulo.precio;
     },
 
     agregarModal(articulo) {
@@ -149,6 +147,19 @@ createApp({
             )
             .sort((a, b) => a.precio - b.precio);
         }
+      }
+    },
+    pintarSuma() {
+      if (this.articulosCarrito.length !== 0) {
+        console.log(this.articulosCarrito);
+        let array1 = [];
+        this.articulosCarrito.forEach((articulo) =>
+          array1.push(articulo.precio)
+        );
+        let array2 = array1.reduce((precio1, precio2) => {
+          return precio1 + precio2;
+        });
+        this.totalCarrito = array2;
       }
     },
   },
