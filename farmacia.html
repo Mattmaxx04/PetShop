@@ -111,9 +111,9 @@
                   </div>                  
                   <div class="contenido__flip d-flex pt-1 flex-column align-items-center justify-content-around">
                     <h6 class="text-center text-dark">{{articulo.nombre}}</h6>
-                    <p v-if="articulo.stock<=5" class="card-text text-start text-danger fw-bolder">Pocas unidades!!!</p>
                     <p class="card-text precio-art">${{articulo.precio}}</p>
                   </div>
+                  <img v-if="articulo.stock<=5" src="assets/ultimasunidades.png" style="width: 80px; position: relative; top: -350px; left: -90px; transform: rotate(-25deg);" alt="">
                 </div>
 
                 <div class="flip-card-back d-flex flex-column align-content-center justify-content-around">                 
