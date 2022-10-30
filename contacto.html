@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <link rel="stylesheet" href="./css/style.css">
@@ -91,17 +92,10 @@
           </header>
     <main>
     
-      <h3 class=" w-100 text-center" id="conmov" style="font-weight: 300">Contáctenos</h3>
-        <div class="d-flex w-100 text-start justify-content-around h-100" id="headercontact ">
-          <div class="w-25 d-flex flex-column" >
-            <h6>Nos encontrás en:</h6>
-      <p> Rio de Janeiro 300, Caballito,</p>
-      <p> Ciudad Autónoma de Buenos Aires.</p>
-      <h6> Teléfono:</h6>
-      <p> 35 11 4567 6789</p>
-      </div>
-        <form @submit.prevent="enviarForm()" class="d-flex" >
-          <div class="w-100 d-flex flex-column align-items-end" >
+      <h3 class="mt-4 mb-4 w-100 text-center" id="conmov" style="font-weight: 600">Contáctenos</h3>
+        <div class="d-flex w-100 text-start justify-content-around h-100 mb-3" id="headercontact " style="min-height: 60vh">
+        <form @submit.prevent="enviarForm()" class="d-flex w-50" >
+          <div class="w-100 d-flex flex-column align-items-start" id="conmovdos" style="opacity: 0%">
             <h6>Procesá tu solicitud online.</h6>
         <div class="form-group input w-100">
           <input type="text" class="form-control w-100 mt-4" id="exampleFormControlInput1" placeholder="" required>
@@ -113,7 +107,7 @@
         </div>
         <div class="form-group w-100">
           <select class="form-control w-100 mt-4 p-0" id="exampleFormControlSelect1" required>
-            <option selected disabled value="">Seleccione un animal:</option>
+            <option selected disabled value="" style="color: ;">Seleccione un animal:</option>
             <option>Culebra</option>
             <option>Gato</option>
             <option>Perro</option>
@@ -123,77 +117,58 @@
             <input type="text" class="form-control w-100 mt-4" id="exampleFormControlInput1" placeholder="" style="height: 3rem;" required>
             <label id="labeltext">Comentarios</label>
           </div>
-              <div class="mt-3 w-100 d-flex justify-content-center">
+              <div class="mt-3 w-100 d-flex">
                 <button id="submit" type="submit" class="btn btn-primary">Enviar</button>
             </div>
         </div>
     </div>
         
       </form>
+      <div class="w-25 d-flex flex-column" >
+        <h6>Nos encontrás en:</h6>
+  <p> Rio de Janeiro 300, Caballito,</p>
+  <p> Ciudad Autónoma de Buenos Aires.</p>
+  <h6> Teléfono:</h6>
+  <p> 35 11 4567 6789</p>
+  
+  </div>
+  
     </div>
     </main>
-    <footer>
+    <div class="footer-clean">
+      <footer>
+          <div class="container">
+              <div class="row justify-content-evenly text-start">
+                  <div class="col-sm-4 col-md-3 item">
+                      <h3>Páginas amigas:</h3>
+                      <ul>
+                          <li><a href="https://www.accenture.com/ar-es">Accenture</a></li>
+                          <li><a href="https://mindhubweb.com/">MindHub</a></li>
+                          <li><a href="#">Bizarrap</a></li>
+                      </ul>
+                  </div>
+                  <div class="col-sm-4 col-md-3 item">
+                      <h3>Desarrollado por:</h3>
+                      <ul>
+                          <li><a href="#">Dalila Mistura<i class="icon ion-social-linkedin"></i></a></li>
+                          <li><a href="#">Matías Quiroga<i class="icon ion-social-linkedin"></i></a></li>
+                          <li><a href="#">Alejandro I. Godino<i class="icon ion-social-linkedin"></i></a></li>
+                          <li><a href="#">Lucas L. Guaymas<i class="icon ion-social-linkedin"></i></a></li>
+                      </ul>
+                  </div>
+                  <div class="col-sm-4 col-md-3 item">
+                      <h3>¿Quiénes somos?</h3>
+                      <h6>Somos unos capos que vendemos cositas para animalitos y los curamos pq son muy cute.</h6>
+                      <p>Vení a conocernos!</p>
+                  </div>
+                  <div class="col-lg-3 item social d-flex justify-content-center"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a>
 
-      <div class="footertop">
-        <div class="footer__left">
-          <div class="container footer__img"></div>
-
-          <div class="text-copyright">© 2022 Madalu. Es una marca registrada.</div>
-        </div>
-
-        <div class="vr"></div>
-
-        <div class="footer__rigth">
-            <div class="footer__content" id="navbarNav">
-              <ul class="footer__list">
-                <li class="footer__list__item">
-                  <a class="footer__list__link active fw-bold" aria-current="page" href="contacto.html"><i
-                      class="uil uil-phone-alt"></i></a>
-                </li>
-                <li class="footer__list__item">
-                  <a class="footer__list__link active fw-bold" aria-current="page" href="index.html"><i
-                      class="uil uil-whatsapp"></i></a>
-                </li>
-                <li class="footer__list__item">
-                  <a class="footer__list__link active fw-bold" aria-current="page" href="farmacia.html"><i
-                      class="uil uil-facebook-f"></i></a>
-                </li>
-                <li class="footer__list__item">
-                  <a class="footer__list__link active fw-bold" aria-current="page" href="juguetes.html"><i
-                      class="uil uil-instagram"></i></a>
-                </li>
-                <li class="footer__list__item">
-                  <a class="footer__list__link active fw-bold" aria-current="page" href="juguetes.html"><i
-                      class="uil uil-map-marker"></i></a>
-                </li>
-              </ul>
-            </div>
+                  </div>
+                  <p class="copyright text-end">© 2022 Madalu. Es una marca registrada.</p>
+              </div>
           </div>
-      </div>
-      
-
-      <div class="footer__bootom">
-        <h6>Desarrollado por:</h6>
-        <div class="developers">
-          <button type="button" class="btn btn-light">
-            <a class="btn__footer" href="https://www.linkedin.com/in/dalilamf/">
-              Dalila Mistura <i class="bi bi-linkedin"></i></a>
-          </button>
-          <button type="button" class="btn btn-light">
-            <a class="btn__footer" href="https://www.linkedin.com/in/matíasquiroga/">
-              Matías Quiroga <i class="bi bi-linkedin"></i></a>
-          </button>
-          <button type="button" class="btn btn-light">
-            <a class="btn__footer" href="https://www.linkedin.com/in/luca-leon-guaymas-600651222/">
-              Luca Leon Guaymas <i class="bi bi-linkedin"></i></a>
-          </button>
-          <button type="button" class="btn btn-light">
-            <a class="btn__footer" href="https://www.linkedin.com/in/alejandro-ignacio-godino/">
-              Alejandro Godino <i class="bi bi-linkedin"></i></a>
-          </button>
-        </div>
-      </div>
-    </footer>
+      </footer>
+  </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
   crossorigin="anonymous"></script>
