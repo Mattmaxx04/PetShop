@@ -115,14 +115,19 @@
   
     </div>
     </main>
+
     <!-- ------ OFFCANVA CARRITO -------- -->
     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-      <div class="offcanvas-header">
+      <div class="offcanvas-header border-bottom">
         <h5 class="offcanvas-title" id="offcanvasExampleLabel">Detalle</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
-        <div>
+        <div v-if="articulosCarrito.length==0" class="d-flex h-100 flex-column align-items-center justify-content-evenly">
+          <p class="fw-bolder text-center" style="color: #477890;">Hola, tu carrito esta vacio 😔</p>
+          <img src="assets/dog-paw-animate.svg" alt="">
+        </div>
+        <div v-else class="h-100">
          
               <div v-for="articulo in articulosCarrito">
                 <div class="d-flex justify-content-between mb-1 border-bottom">
