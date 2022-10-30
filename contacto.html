@@ -38,32 +38,12 @@
                     <li class="nav-item">
                       <a class="nav-link active fw-bold" aria-current="page" href="">Contacto</a>
                     </li>
-                    <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        <i class="uil uil-shopping-cart"></i>
-                      </a>
-                      <ul class="dropdown-menu dropdown-menu-right ml-5">
-                        <li>
-                          <div v-for="articulo in articulosCarrito">
-                            <div class="d-flex justify-content-between">
-                              <img :src="articulo.imagen" style="height: 5rem" alt="...">
-                              <p>{{articulo.nombre}}</p>                       
-                              <i class="bi bi-x-circle" @click="eliminarCarrito(articulo)"></i>
-                            </div>
-                          </div>
-                        </li>
-                        <li>
-                          <div class="d-flex p-2 justify-content-between">
-                            <p>Total</p>
-                            <p>${{}}</p>
-                          </div>
-                          <div class="dropdown-divider"></div>
-                          <div class="d-grid gap-2">
-                            <button class="btn btn-primary m-2" type="button">Enviar pedido</button>
-                          </div>
-                        </li>
-                      </ul>
+                    <li class="nav-item">
+                     
+                       <!-- BOTONCITO DEL CARRITO QUE TE ABRE EL OFFCANVA -->
+                <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                  <i class="uil uil-shopping-cart"></i>
+                </a>
                     </li>
                    </ul>
                 </div>
@@ -107,7 +87,7 @@
         </div>
         <div class="form-group w-100">
           <select class="form-control w-100 mt-4 p-0" id="exampleFormControlSelect1" required>
-            <option selected disabled value="" style="color: ;">Seleccione un animal:</option>
+            <option selected disabled value="" style="color: 000;">Seleccione un animal:</option>
             <option>Culebra</option>
             <option>Gato</option>
             <option>Perro</option>
@@ -135,6 +115,49 @@
   
     </div>
     </main>
+    <!-- ------ OFFCANVA CARRITO -------- -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Detalle</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div>
+         
+              <div v-for="articulo in articulosCarrito">
+                <div class="d-flex justify-content-between mb-1 border-bottom">
+                  <img :src="articulo.imagen" style="height: 5rem" alt="{{articulo.nombre}}">
+                  <div class="">
+                    <div class="d-flex flex-row-reverse gap-1 ms-1">
+                      <i class="uil uil-trash-alt" @click="eliminarCarrito(articulo)"></i>
+                      <h6>{{articulo.nombre}}</h6>    
+                      
+                      
+                    </div>
+                    <div class="d-flex carrito-input gap-1 justify-content-evenly">
+                     <p>${{articulo.precio}}</p>
+                     <p>x</p>
+                     <input type="number" min="1" max={{articulo.stock}} name="" id="">                   
+                     
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="d-flex p-2 justify-content-between">
+                <p>Total</p>
+                <p>${{totalCarrito}}</p>              </div>
+              <div class="dropdown-divider"></div>
+              <div class="d-grid gap-2">
+               
+                <a href="./detalle.html" class="btn btn-primary m-2" >Completar pedido</a>
+              </div>
+          
+        </div>
+      </div>
+    </div>
+
+
     <div class="footer-clean">
       <footer>
           <div class="container">
