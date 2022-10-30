@@ -18,6 +18,9 @@
   <div id="app">
     <header>
       <!-- NAV -->
+      <div v-cloak>
+        {{pintarSuma}}
+      </div>
       <nav class="navbar navbar-expand-lg ">
         <div class="container navbar__img"></div>
         <div class="container-fluid">
@@ -168,8 +171,7 @@
             
               <div class="d-flex p-2 justify-content-between">
                 <p>Total</p>
-                <p>${{Total}}</p>
-              </div>
+                <p>${{totalCarrito}}</p>              </div>
               <div class="dropdown-divider"></div>
               <div class="d-grid gap-2">
                 <button class="btn btn-primary m-2" type="button">Enviar pedido</button>
