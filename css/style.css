@@ -544,12 +544,6 @@ h6{
 
 /*---------------------------------contact-----------------------*/
 
-/*#contactform {
-    background-color: rgba(255, 125, 0, 0.5);
-    padding: 2% 0 2% 0;
-    box-shadow: -2px 11px 5px -4px rgba(0,0,0,0.75);
-}
-
 #headercontact {
     background-color: rgba(245, 245, 245, 0.8);
     border-radius: 3rem 3rem 0 0;
@@ -558,9 +552,10 @@ h6{
     align-items: center;
 }
 
+
+
 .input label {
     position: absolute;
-    left: 1rem;
     bottom: 0.1rem;
     font-size: 0.8rem;
     transition: all 0.3s ease;
@@ -573,18 +568,21 @@ h6{
 
 #labeltext {
     position: absolute;
-    left: 1rem;
     bottom: 2rem;
     font-size: 0.8rem;
     transition: all 0.3s ease;
     color: grey;
 }
 
-input[type= "text"], select, textarea, [type= "checkbox"] {
+select {
+
+}
+
+input[type= "text"], textarea, [type= "checkbox"] {
     padding: 0;
-    margin-left: 1rem;
     position: relative;
     border: none;
+    border-radius: 0;
     border-bottom: 2px solid silver;
     outline: none;
  }
@@ -619,10 +617,13 @@ input[type= "text"], select, textarea, [type= "checkbox"] {
 
 
 .btn-primary{
-    background-color: #6C757D;
+    color: black;
+    background-color: #d6d690;
     outline: none;
     border: 0px;
      box-shadow: none;
+     font-size: 0.8rem;
+    border-radius: 5px;
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active{
@@ -635,6 +636,26 @@ input[type= "text"], select, textarea, [type= "checkbox"] {
 #img__contact {
     width: 30%
 }
+
+h6 {
+    font-weight: 300;
+    transition-property: text-decoration;
+    transition-duration: 0.8s;
+    transition-timing-function: linear;
+    transition-delay: 0.2s;
+}
+
+#conmov {
+    position: relative;
+    animation: mymove 2s forwards;
+}
+
+@keyframes mymove {
+    from {top: 77px;}
+    to {top: 200px;}
+    from {opacity: 0%;}
+    to {opacity: 100%;}
+  }
 
 
 /* modal prueba */
