@@ -34,27 +34,25 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link active fw-bold" aria-current="page" href="index.html">Inicio</a>
+                <a class="nav-link  fw-bold" aria-current="page" href="index.html">Inicio</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active fw-bold" aria-current="page" href="farmacia.html">Farmacia</a>
+                <a class="nav-link  fw-bold" aria-current="page" href="farmacia.html">Farmacia</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link active fw-bold" aria-current="page" href="">Juguetes</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active fw-bold" aria-current="page" href="contacto.html">Contacto</a>
+                <a class="nav-link  fw-bold" aria-current="page" href="contacto.html">Contacto</a>
               </li>
-              <li class="nav-item">
-                <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
-                  aria-controls="offcanvasExample">
-                  <i class="uil uil-shopping-cart"></i>
-                </a>
-
-              </li>
+              
             </ul>
           </div>
         </div>
+        <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+                  aria-controls="offcanvasExample">
+                  <i class="uil uil-shopping-cart"></i>
+                </a>
       </nav>
 
 
@@ -122,8 +120,10 @@
                   <div class="contenido__flip d-flex flex-column align-items-center justify-content-evenly">
                     <h6 class="text-center text-dark">{{articulo.nombre}}</h6>
                     <p class="card-text precio-art pt-1 m-0">${{articulo.precio}}</p>
-                    <p v-if="articulo.stock<=5" class="card-text text-start text-danger fw-bolder">Pocas unidades!!!</p>
+                    
                   </div>
+                  <img v-if="articulo.stock<=5" src="assets/ultimasunidades.png" style="width: 80px; position: relative; top: -350px; left: -90px; transform: rotate(-25deg);" alt="">
+               
                 </div>
 
                 <div class="flip-card-back d-flex flex-column align-content-center justify-content-center">
@@ -190,32 +190,46 @@
 
     <!-- ------ OFFCANVA CARRITO -------- -->
     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-      <div class="offcanvas-header">
+      <div class="offcanvas-header border-bottom">
         <h5 class="offcanvas-title" id="offcanvasExampleLabel">Detalle</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
-        <div>
-
-          <div v-for="articulo in articulosCarrito">
-            <div class="d-flex justify-content-between">
-              <img :src="articulo.imagen" style="height: 5rem" alt="{{articulo.nombre}}">
-              <p>{{articulo.nombre}}</p>
-              <p>${{articulo.precio}}</p>
-              <!-- <input type="number" min="1" max={{articulo.stock}} name="" id="">                     -->
-              <i class="bi bi-x-circle" @click="eliminarCarrito(articulo)"></i>
-            </div>
-          </div>
-
-          <div class="d-flex p-2 justify-content-between">
-            <p>Total</p>
-            <p>${{totalCarrito}}</p>
-          </div>
-
-          <div class="d-grid gap-2">
-            <a class="btn btn-primary m-2" href="">Continuar compra</a>
-          </div>
-
+        <div v-if="articulosCarrito.length==0" class="d-flex h-100 flex-column align-items-center justify-content-evenly">
+          <p class="fw-bolder text-center" style="color: #477890;">Hola, tu carrito esta vacio 😔</p>
+          <img src="assets/dog-paw-animate.svg" alt="">
+        </div>
+        <div v-else class="h-100">
+         
+              <div v-for="articulo in articulosCarrito">
+                <div class="d-flex justify-content-between mb-1 border-bottom">
+                  <img :src="articulo.imagen" style="height: 5rem" alt="{{articulo.nombre}}">
+                  <div class="">
+                    <div class="d-flex flex-row-reverse gap-1 ms-1">
+                      <i class="uil uil-trash-alt" @click="eliminarCarrito(articulo)"></i>
+                      <h6>{{articulo.nombre}}</h6>    
+                      
+                      
+                    </div>
+                    <div class="d-flex carrito-input gap-1 justify-content-evenly">
+                     <p>${{articulo.precio}}</p>
+                     <p>x</p>
+                     <input type="number" min="1" max={{articulo.stock}} name="" id="">                   
+                     
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+              <div class="d-flex p-2 justify-content-between">
+                <p>Total</p>
+                <p>${{totalCarrito}}</p>              </div>
+              <div class="dropdown-divider"></div>
+              <div class="d-grid gap-2">
+               
+                <a href="./detalle.html" class="btn btn-primary m-2" >Completar pedido</a>
+              </div>
+          
         </div>
       </div>
     </div>
