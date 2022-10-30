@@ -160,6 +160,8 @@ createApp({
           return precio1 + precio2;
         });
         this.totalCarrito = array2;
+      }else if(this.articulosCarrito.length == 0){
+        this.totalCarrito = 0;
       }
     },
   },
