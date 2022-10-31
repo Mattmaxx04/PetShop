@@ -117,7 +117,7 @@ createApp({
       document.getElementById("inputtelcontact").value = ""
       document.getElementById("selectcontact").value = ""
       document.getElementById("inputcomentarioscontact").value = ""
-    },
+    },    
     limpiaCarrito(){
       this.articulosCarrito = []
       console.log(this.articulosCarrito)
@@ -131,30 +131,17 @@ createApp({
       document.getElementById("titular").value=""
       document.getElementById("mes").value=""
       document.getElementById("codigoS").value=""
-      
-    },
-    limpiaCarrito(){
-      this.articulosCarrito = []
-      console.log(this.articulosCarrito)
-      document.getElementById("nombre").value=""
-      document.getElementById("direccion").value=""
-      document.getElementById("mail").value=""
-      document.getElementById("number").value=""
-      document.getElementById("provincia").value="Provincia"
-      document.getElementById("ciudad").value=""
-      document.getElementById("tarjeta").value=""
-      document.getElementById("titular").value=""
-      document.getElementById("mes").value=""
-      document.getElementById("codigoS").value=""
-      
+      setTimeout(function(){window.location.href="/index.html"},3000)
     },
 
     graciasPorSuCompra() {
+      
         new swal(
           "¡Gracias por su compra!",
           "Su solicitud ha sido procesada correctamente.",
           "success"
         );
+
         this.articulosCarrito = []
         this.totalCarrito = 0
       

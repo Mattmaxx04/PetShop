@@ -193,7 +193,7 @@
       </div>
 
 
-      <!-- Modal -->
+      <!-- Modal 
       <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl">
 
@@ -228,7 +228,7 @@
           </div>
 
         </div>
-      </div>
+      </div>-->
     </main>
 
     <!-- ------ OFFCANVA CARRITO -------- -->
@@ -250,17 +250,17 @@
                   <div class="">
                     <div class="d-flex flex-row-reverse gap-1 ms-1">
                       <i class="uil uil-trash-alt" @click="eliminarCarrito(articulo)"></i>
-                      <p>{{articulo.cant}}</p>
+                     
                       <h6>{{articulo.nombre}}</h6>    
                       
                       
                     </div>
                     <div class="d-flex carrito-input gap-1 justify-content-evenly">
-                     <p>${{articulo.precio}}</p>
-                     <p>x</p>
-                     <input type="number" min="1" max={{articulo.stock}} name="" id="">                   
-                     
-                    </div>
+                      <p>${{articulo.precio}}</p> 
+                      <p>X</p>                                  
+                      <p>{{articulo.cant}}u.</p>
+                      
+                     </div>
                   </div>
                 </div>
               </div>
