@@ -733,9 +733,8 @@ iframe {
     border-radius:1rem;
 }
 
-
 .img_container{
-    height: 50%;
+    height: 65%;
     border-radius: 1rem 1rem 0 0;
 }
 .img-art{
@@ -747,7 +746,7 @@ iframe {
 }
 
 .contenido__flip{
-    height: 50%;
+    height: 35%;
 }
 
 .flip-card-back{
@@ -758,6 +757,12 @@ iframe {
 }
 .descripcion__articulo{
     font-size: 15px;
+}
+.tittle__articulo{
+    font-size: 1.2rem;
+}
+.precio-art{
+    font-size: 1.8rem;
 }
 /*fin */
 
