@@ -499,33 +499,6 @@ main {
     gap: 0.5rem;
     justify-content: center;
 }
-
-
-/*
-.card{
-    width: 14rem!important;
-    height: 26rem !important;
-    background: var(--colorligth);
-}
-
-.card-body {
-    height: 14rem;
-}
-
-.card-body h5 {
-    font-family: var(--font1);
-    padding: 0.2rem;
-    font-weight: 400;
-    color: var(--colordark);
-}
-
-.card-text {
-    font-family: var(--font2);
-    color: var(--colordark);
-    font-weight: 200;
-    font-size: 0.8rem;
-}
-
 .card__img1 {
     border-radius: 10px 10px 0px 0px;
     height: 12rem;
@@ -561,6 +534,33 @@ main {
     background-repeat: no-repeat;
     background-position: center;
 }
+
+/*
+.card{
+    width: 14rem!important;
+    height: 26rem !important;
+    background: var(--colorligth);
+}
+
+.card-body {
+    height: 14rem;
+}
+
+.card-body h5 {
+    font-family: var(--font1);
+    padding: 0.2rem;
+    font-weight: 400;
+    color: var(--colordark);
+}
+
+.card-text {
+    font-family: var(--font2);
+    color: var(--colordark);
+    font-weight: 200;
+    font-size: 0.8rem;
+}
+
+
 
 .ubicacion {
     margin: 0.5rem;
