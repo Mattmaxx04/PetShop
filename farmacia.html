@@ -8,6 +8,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="./css/style.css">
@@ -49,6 +50,7 @@
       <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
                 aria-controls="offcanvasExample">
                 <i class="uil uil-shopping-cart"></i>
+                <p>{{cantidadEProducto}}</p>
               </a>
     </nav>
 
@@ -125,8 +127,11 @@
                    </div>
                     <div class="d-flex justify-content-evenly align-content-center">
                       <p class="fw-bold m-0 d-flex">${{articulo.precio}}</p>
-                      <button type="button" class="btn btn-carrito">
+                      <button v-if="articulo.stock > 0" type="button" class="btn btn-carrito">
                         <a class="text-black"><i class="uil uil-shopping-cart" @click="agregarCarrito(articulo)"></i></a></button>
+                        <button v-else type="button" class="btn btn-carrito" disabled> no hay ma
+                          <!-- <a class="text-black"><i class="uil uil-shopping-cart"></i></a> -->
+                        </button>
                     </div>
                   </div>
                 </div>
@@ -167,18 +172,19 @@
          
               <div v-for="articulo in articulosCarrito">
                 <div class="d-flex justify-content-between mb-1 border-bottom">
+                  <p>{{articulo.cant}}</p>
                   <img :src="articulo.imagen" style="height: 5rem" alt="{{articulo.nombre}}">
                   <div class="">
                     <div class="d-flex flex-row-reverse gap-1 ms-1">
                       <i class="uil uil-trash-alt" @click="eliminarCarrito(articulo)"></i>
+                      
                       <h6>{{articulo.nombre}}</h6>    
                       
                       
                     </div>
                     <div class="d-flex carrito-input gap-1 justify-content-evenly">
                      <p>${{articulo.precio}}</p>
-                     <p>x</p>
-                     <input type="number" min="1" max={{articulo.stock}} name="" id="">                   
+                                  
                      
                     </div>
                   </div>
@@ -187,7 +193,7 @@
             
               <div class="d-flex p-2 justify-content-between">
                 <p>Total</p>
-                <p>${{totalCarrito}}</p>              </div>
+                <p>${{totalPrecio}}</p>              </div>
               <div class="dropdown-divider"></div>
               <div class="d-grid gap-2">
                
@@ -203,24 +209,27 @@
               <div class="row justify-content-evenly text-start">
                 <div class="col-sm-4 col-md-3 item">
                   <h3>¿Quiénes somos?</h3>
-                  <h6>Somos unos capos que vendemos cositas para animalitos y los curamos pq son muy cute.</h6>
-                  <p>Vení a conocernos!</p>
+                  <h6>Amantes de los animales, profesionales dedicados y comprometidos con el bienestar y la salud de tus mascotas.</h6>
+                  <a href="./index.html"><p>Vení a conocernos!</p></a>
               </div>
                   <div class="col-sm-4 col-md-3 item">
-                      <h3>Páginas amigas:</h3>
-                      <ul class="d-flex justify-content-evenly">
-                          <li><img src="./assets/bajoelsol.jpg" style="width: 3rem; border-radius: 6px;" alt="Refugio Bajo el sol"></li>
-                          <li><img src="./assets/refugio1.jpeg" style="width: 3rem; border-radius: 6px;" alt="Refugio Bajo el sol"></li>
-                          <li><img src="./assets/cuatropatas.jpeg" style="width: 3rem; border-radius: 6px;" alt="Refugio Bajo el sol"></li>
-                      </ul>
+                      <h3 class="text-start">Páginas amigas:</h3>
+                      
+                      <ul class="d-flex justify-content-between">
+                          <li><a href="https://www.instagram.com/grupobajoelsol/?hl=es" target="_blank"><img src="./assets/bajoelsol.jpg" style="width: 3rem; border-radius: 6px;" alt="Refugio Bajo el sol"></a></li>
+                          <li><a href="https://www.instagram.com/refugioelcampito/?hl=es" target="_blank"><img src="./assets/refugio1.jpeg" style="width: 3rem; border-radius: 6px;" alt="Refugio Bajo el sol"></a></li>
+                          <li><a href="https://www.proyecto4patas.org/" target="_blank"><img src="./assets/cuatropatas.jpeg" style="width: 3rem; border-radius: 6px;" alt="Refugio Bajo el sol"></a></li>
+                          <li><a href="https://www.instagram.com/ayudacan/?hl=es" target="_blank"><img src="data:image/png;base64,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" style="width: 3rem; border-radius: 6px;" alt="Refugio Bajo el sol"></li>
+                          </a>
+                          </ul>
                   </div>
-                  <div class="col-sm-4 col-md-3 item">
+                  <div class="col-sm-4 col-md-2 item">
                       <h3>Desarrollado por:</h3>
                       <ul>
-                          <li><a href="#">Dalila Mistura<i class="icon ion-social-linkedin"></i></a></li>
-                          <li><a href="#">Matías Quiroga<i class="icon ion-social-linkedin"></i></a></li>
-                          <li><a href="#">Alejandro I. Godino<i class="icon ion-social-linkedin"></i></a></li>
-                          <li><a href="#">Lucas L. Guaymas<i class="icon ion-social-linkedin"></i></a></li>
+                          <li><a href="https://www.linkedin.com/in/dalilamf/" target="_blank">Dalila Mistura<i class="icon ion-social-linkedin"></i></a></li>
+                          <li><a href="https://www.linkedin.com/in/mat%C3%ADasquiroga/" target="_blank">Matías Quiroga<i class="icon ion-social-linkedin"></i></a></li>
+                          <li><a href="https://www.linkedin.com/in/alejandro-ignacio-godino/" target="_blank">Alejandro I. Godino<i class="icon ion-social-linkedin"></i></a></li>
+                          <li><a href="https://www.linkedin.com/in/luca-leon-guaymas-600651222/" target="_blank">Luca L. Guaymas<i class="icon ion-social-linkedin"></i></a></li>
                       </ul>
                   </div>
                  
