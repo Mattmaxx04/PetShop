@@ -52,18 +52,46 @@ createApp({
     },
 
     agregarCarrito(articulo) {
-      if (!this.articulosCarrito.includes(articulo)) {
-        this.articulosCarrito.push(articulo);
-      }
-      localStorage.setItem("favorito", JSON.stringify(this.articulosCarrito));
-    },
-    eliminarCarrito(articulo) {
-      this.articulosCarrito = this.articulosCarrito.filter(
-        (articuloC) => articuloC != articulo
-      );
-      localStorage.setItem("favorito", JSON.stringify(this.articulosCarrito));
-    },
+      const itemArtCar = this.articulosCarrito.filter(item => item._id == articulo._id)[0];
+       if(itemArtCar != undefined){
+         itemArtCar.cant++;
+         } else {
+           const itemArtCar = {
+             _id: articulo._id,
+             imagen: articulo.imagen,
+             nombre: articulo.nombre,
+             precio: articulo.precio,
+             cant: 1,
+           }
+           this.articulosCarrito.push(itemArtCar)
+         }
+         articulo.stock --;
+         localStorage.setItem("favorito", JSON.stringify(this.articulosCarrito));
+ 
+     },
+     eliminarCarrito(articulo) {
+       const itemArtCar = this.articulos.filter((item) => item._id == articulo._id)[0];
+     
+       itemArtCar.stock += articulo.cant;
+       let indice = 0;
+       this.articulosCarrito.forEach((item, i) => item._id == articulo._id ? (indice = i): null)
+       this.articulosCarrito.splice(indice, 1);
+       localStorage.setItem("favorito", JSON.stringify(this.articulosCarrito));
+ 
+     },
+    // agregarCarrito(articulo) {
+    //   if (!this.articulosCarrito.includes(articulo)) {
+    //     this.articulosCarrito.push(articulo);
+    //   }
+    //   localStorage.setItem("favorito", JSON.stringify(this.articulosCarrito));
+    // },
+    // eliminarCarrito(articulo) {
+    //   this.articulosCarrito = this.articulosCarrito.filter(
+    //     (articuloC) => articuloC != articulo
+    //   );
 
+    //   localStorage.setItem("favorito", JSON.stringify(this.articulosCarrito));
+    // },
     agregarModal(articulo) {
       if (this.modal.length === 0) {
         array = Object.values(articulo);
@@ -85,6 +113,10 @@ createApp({
         "Su solicitud ha sido procesada correctamente.",
         "success"
       );
+      document.getElementById("inputnombrecontact").value = ""
+      document.getElementById("inputtelcontact").value = ""
+      document.getElementById("selectcontact").value = ""
+      document.getElementById("inputcomentarioscontact").value = ""
     },
     limpiaCarrito(){
       this.articulosCarrito = []
@@ -179,20 +211,26 @@ createApp({
         }
       }
     },
-    pintarSuma() {
-      if (this.articulosCarrito.length !== 0) {
-        console.log(this.articulosCarrito);
-        let array1 = [];
-        this.articulosCarrito.forEach((articulo) =>
-          array1.push(articulo.precio)
-        );
-        let array2 = array1.reduce((precio1, precio2) => {
-          return precio1 + precio2;
-        });
-        this.totalCarrito = array2;
-      }else if(this.articulosCarrito.length == 0){
-        this.totalCarrito = 0;
-      }
+    cantidadEProducto() {
+      return this.articulosCarrito.reduce((acumulador, item) => acumulador + item.cant, 0)
     },
+    totalPrecio() {
+      return this.articulosCarrito.reduce((acumulador, item) => acumulador + (item.cant * item.precio), 0)
+    }
+    // pintarSuma() {
+    //   if (this.articulosCarrito.length !== 0) {
+    //     console.log(this.articulosCarrito);
+    //     let array1 = [];
+    //     this.articulosCarrito.forEach((articulo) =>
+    //       array1.push(articulo.precio)
+    //     );
+    //     let array2 = array1.reduce((precio1, precio2) => {
+    //       return precio1 + precio2;
+    //     });
+    //     this.totalCarrito = array2;
+    //   }else if(this.articulosCarrito.length == 0){
+    //     this.totalCarrito = 0;
+    //   }
+    // },
   },
 }).mount("#app");
