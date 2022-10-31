@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="assets/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="./css/style.css">
   <title>Farmacia</title>
 </head>
@@ -71,6 +71,9 @@
             Ordenar por:
           </button>
           <ul class="dropdown-menu">
+            <li><label for="def">Por defecto
+              <input checked v-model="inputDrop" type="radio" id="def" value="def">
+            </label></li>
             <li> <label for="Max">Mayor precio
                 <input v-model="inputDrop" type="radio" id="Max" value="Max">
               </label></li>
