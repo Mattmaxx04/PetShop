@@ -359,7 +359,9 @@ nav {
     border-bottom: 1px solid var(--colordark);
 
 }
-
+.navbar-nav{
+    align-items: center;
+}
 .navbar-collapse{
     justify-content: flex-end;
     margin-right: 3rem;
@@ -367,9 +369,11 @@ nav {
 }
 .navbar__img{
     width: 50%;
-    display: flex;
-    justify-content: center!important;
-    align-items: normal!important;
+    background-image: url(../assets/logo1.png);  
+    background-size:contain ;
+    background-repeat: no-repeat;
+    background-position: center; 
+    height: 3rem;
 }
 /*
 .nav-link{
