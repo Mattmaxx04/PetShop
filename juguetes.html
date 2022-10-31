@@ -117,9 +117,9 @@
                   <div class="img_container">
                     <img :src="articulo.imagen" class="img-art" alt="{{articulo.nombre}}">
                   </div>
-                  <div class="contenido__flip d-flex flex-column align-items-center justify-content-evenly">
-                    <h6 class="text-center text-dark">{{articulo.nombre}}</h6>
-                    <p class="card-text precio-art pt-1 m-0">${{articulo.precio}}</p>
+                  <div class="contenido__flip d-flex flex-column align-items-center justify-content-between">
+                    <h6 class="text-center tittle__articulo text-dark fw-bold">{{articulo.nombre}}</h6>
+                    <p class="precio-art pt-1 m-0 fw-bold">${{articulo.precio}}</p>
                     
                   </div>
                   <img v-if="articulo.stock<=5" src="assets/ultimasunidades.png" style="width: 80px; position: relative; top: -350px; left: -90px; transform: rotate(-25deg);" alt="">
@@ -128,12 +128,12 @@
 
                 <div class="flip-card-back d-flex flex-column align-content-center justify-content-center">
                   <div class="contenido-back-card d-flex flex-column justify-content-between">
-                    <h6 class="tittle__articulo">{{articulo.nombre}}</h6>
+                    <h6 class="tittle__articulo fw-bold">{{articulo.nombre}}</h6>
                     <p class="descripcion__articulo">{{articulo.descripcion}}</p>
                     <p class="descripcion__articulo fw-bolder">Stock: {{articulo.stock}} u.</p>
 
                     <div class="d-flex justify-content-evenly align-content-center">
-                      <p class="fw-bold precio-art m-0 d-flex">${{articulo.precio}}</p>
+                      <p class="fw-bold m-0 d-flex">${{articulo.precio}}</p>
                       <button type="button" class="btn btn-carrito">
                         <a class="text-black"><i class="uil uil-shopping-cart"
                             @click="agregarCarrito(articulo)"></i></a></button>
@@ -196,7 +196,7 @@
       </div>
       <div class="offcanvas-body">
         <div v-if="articulosCarrito.length==0" class="d-flex h-100 flex-column align-items-center justify-content-evenly">
-          <p class="fw-bolder text-center" style="color: #477890;">Hola, tu carrito esta vacio 😔</p>
+          <p class="fw-bolder text-center" style="color: #477890;">Hola, tu carrito esta vacio <span style="font-size:1.3rem;">😔</span></p>
           <img src="assets/dog-paw-animate.svg" alt="">
         </div>
         <div v-else class="h-100">
