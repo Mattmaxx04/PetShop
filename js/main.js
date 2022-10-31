@@ -53,27 +53,27 @@ createApp({
     },
 
     agregarCarrito(articulo) {
-      const itemArtCar = this.articulosCarrito.filter(item => item._id == articulo._id)[0];
-       if(itemArtCar != undefined){
-         itemArtCar.cant++;
+      this.itemArtCar = this.articulosCarrito.filter(item => item._id == articulo._id)[0];
+       if(this.itemArtCar != undefined){
+        this.itemArtCar.cant++;
          } else {
-           const itemArtCar = {
+          this.itemArtCar = {
              _id: articulo._id,
              imagen: articulo.imagen,
              nombre: articulo.nombre,
              precio: articulo.precio,
              cant: 1,
            }
-           this.articulosCarrito.push(itemArtCar)
+           this.articulosCarrito.push(this.itemArtCar)
          }
          articulo.stock --;
          localStorage.setItem("favorito", JSON.stringify(this.articulosCarrito)); 
      },
 
      eliminarCarrito(articulo) {
-       const itemArtCar = this.articulos.filter((item) => item._id == articulo._id)[0];
-     console.log(itemArtCar);
-       itemArtCar.stock += articulo.cant;
+      this.itemArtCar = this.articulos.filter((item) => item._id == articulo._id)[0];
+     console.log(this.itemArtCar);
+     this.itemArtCar.stock += articulo.cant;
        
        let indice = 0;
        this.articulosCarrito.forEach((item, i) => item._id == articulo._id ? (indice = i): null)
