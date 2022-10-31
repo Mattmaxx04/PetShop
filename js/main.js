@@ -50,6 +50,7 @@ createApp({
           }
         });
     },
+
     agregarCarrito(articulo) {
       if (!this.articulosCarrito.includes(articulo)) {
         this.articulosCarrito.push(articulo);
@@ -60,9 +61,9 @@ createApp({
       this.articulosCarrito = this.articulosCarrito.filter(
         (articuloC) => articuloC != articulo
       );
-
       localStorage.setItem("favorito", JSON.stringify(this.articulosCarrito));
     },
+
     agregarModal(articulo) {
       if (this.modal.length === 0) {
         array = Object.values(articulo);
@@ -85,28 +86,17 @@ createApp({
         "success"
       );
     },
-    limpiaCarrito(){
-      this.articulosCarrito = []
-      console.log(this.articulosCarrito)
-      document.getElementById("nombre").value=""
-      document.getElementById("direccion").value=""
-      document.getElementById("mail").value=""
-      document.getElementById("number").value=""
-      document.getElementById("provincia").value="Provincia"
-      document.getElementById("ciudad").value=""
-      document.getElementById("tarjeta").value=""
-      document.getElementById("titular").value=""
-      document.getElementById("mes").value=""
-      document.getElementById("codigoS").value=""
+
+    graciasPorSuCompra() {
+        new swal(
+          "¡Gracias por su compra!",
+          "Su solicitud ha sido procesada correctamente.",
+          "success"
+        );
+        this.articulosCarrito = []
+        this.totalCarrito = 0
       
     },
-  },
-  graciasPorSuCompra() {
-    new swal(
-      "¡Gracias por su compra!",
-      "Su solicitud ha sido procesada correctamente.",
-      "success"
-    );
   },
   computed: {
     filtro() {
