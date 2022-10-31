@@ -32,7 +32,10 @@
 body {
     background: var(--colorligth2);
 }
-
+.h6__nombre{
+    font-family: var(--font2)!important;
+    color: var(--colordark)!important;
+}
 main{
     padding-top: 1rem;
 }
@@ -752,7 +755,9 @@ iframe {
 
 
 /* Nuevo estilo de cartas */
-
+.buscador{
+    width: 30rem;
+}
 .flip-card {
     background-color: transparent;
     width: 250px !important;
@@ -833,6 +838,7 @@ iframe {
     width: 4rem;
     height: 1rem;
     padding: 5px;
+
 }/*fin */
 /*-------------------- farmacia - juguetes -------------------------- */
 /*.filter .dropdown-menu{
