@@ -49,6 +49,7 @@
       <a class="btn btn-primary" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
                 aria-controls="offcanvasExample">
                 <i class="uil uil-shopping-cart"></i>
+                <p>{{cantidadEProducto}}</p>
               </a>
     </nav>
 
@@ -125,8 +126,11 @@
                    </div>
                     <div class="d-flex justify-content-evenly align-content-center">
                       <p class="fw-bold m-0 d-flex">${{articulo.precio}}</p>
-                      <button type="button" class="btn btn-carrito">
+                      <button v-if="articulo.stock > 0" type="button" class="btn btn-carrito">
                         <a class="text-black"><i class="uil uil-shopping-cart" @click="agregarCarrito(articulo)"></i></a></button>
+                        <button v-else type="button" class="btn btn-carrito" disabled> no hay ma
+                          <!-- <a class="text-black"><i class="uil uil-shopping-cart"></i></a> -->
+                        </button>
                     </div>
                   </div>
                 </div>
@@ -167,18 +171,19 @@
          
               <div v-for="articulo in articulosCarrito">
                 <div class="d-flex justify-content-between mb-1 border-bottom">
+                  <p>{{articulo.cant}}</p>
                   <img :src="articulo.imagen" style="height: 5rem" alt="{{articulo.nombre}}">
                   <div class="">
                     <div class="d-flex flex-row-reverse gap-1 ms-1">
                       <i class="uil uil-trash-alt" @click="eliminarCarrito(articulo)"></i>
+                      
                       <h6>{{articulo.nombre}}</h6>    
                       
                       
                     </div>
                     <div class="d-flex carrito-input gap-1 justify-content-evenly">
                      <p>${{articulo.precio}}</p>
-                     <p>x</p>
-                     <input type="number" min="1" max={{articulo.stock}} name="" id="">                   
+                                  
                      
                     </div>
                   </div>
@@ -187,7 +192,7 @@
             
               <div class="d-flex p-2 justify-content-between">
                 <p>Total</p>
-                <p>${{totalCarrito}}</p>              </div>
+                <p>${{totalPrecio}}</p>              </div>
               <div class="dropdown-divider"></div>
               <div class="d-grid gap-2">
                
