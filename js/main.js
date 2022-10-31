@@ -84,6 +84,10 @@ createApp({
         "Su solicitud ha sido procesada correctamente.",
         "success"
       );
+      document.getElementById("inputnombrecontact").value = ""
+      document.getElementById("inputtelcontact").value = ""
+      document.getElementById("selectcontact").value = ""
+      document.getElementById("inputcomentarioscontact").value = ""
     },
     limpiaCarrito(){
       this.articulosCarrito = []
