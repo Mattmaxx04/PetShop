@@ -17,7 +17,8 @@ createApp({
       ArtCarrito: [],
       inputDrop: "",
       array1: [],
-      total: ""
+      total: "",
+      itemArtCar:[]
     };
   },
   created() {
@@ -66,13 +67,14 @@ createApp({
            this.articulosCarrito.push(itemArtCar)
          }
          articulo.stock --;
-         localStorage.setItem("favorito", JSON.stringify(this.articulosCarrito));
- 
+         localStorage.setItem("favorito", JSON.stringify(this.articulosCarrito)); 
      },
+
      eliminarCarrito(articulo) {
        const itemArtCar = this.articulos.filter((item) => item._id == articulo._id)[0];
-     
+     console.log(itemArtCar);
        itemArtCar.stock += articulo.cant;
+       
        let indice = 0;
        this.articulosCarrito.forEach((item, i) => item._id == articulo._id ? (indice = i): null)
        this.articulosCarrito.splice(indice, 1);

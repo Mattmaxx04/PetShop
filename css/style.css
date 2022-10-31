@@ -411,15 +411,17 @@ main {
     display: flex;
     align-items: center;
     margin: 0.5rem;
-    padding-top: 1rem;
     justify-content: space-evenly;
     background: var(--colorligth);
+    margin-bottom: -1rem;
+    
 
 }
 
 .inicio__img {
     width: 30%;
-    margin: 0.5rem;
+    margin: 1rem;
+    border-radius: 1rem;
 }
 
 .inicio__textos {
@@ -496,21 +498,26 @@ main {
 }
 
 .doctors {
-    margin: 1rem;
+    margin: 0.5rem;
     background: var(--colorligth2);
     padding: 1rem;
+    background-color: white;
 }
-.doctors__cards{
-    width: 18rem;
+
+.doctors__card{
+    min-width: 12rem!important;
+    height: 28rem;
 }
+
 .doctors__container {
     display: flex;
     gap: 0.5rem;
     justify-content: center;
 }
+
 .card__img1 {
     border-radius: 10px 10px 0px 0px;
-    height: 12rem;
+    min-height: 14rem;
     background-image: url(../assets/vete1.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -519,7 +526,7 @@ main {
 
 .card__img2 {
     border-radius: 10px 10px 0px 0px;
-    height: 12rem;
+    min-height: 14rem;
     background-image: url(../assets/vete2.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -528,7 +535,7 @@ main {
 
 .card__img3 {
     border-radius: 10px 10px 0px 0px;
-    height: 12rem;
+    min-height: 14rem;
     background-image: url(../assets/vete3.jpg);
     background-size: cover;
     background-repeat: no-repeat;
@@ -537,13 +544,39 @@ main {
 
 .card__img4 {
     border-radius: 10px 10px 0px 0px;
-    height: 12rem;
+    min-height: 14rem;
     background-image: url(../assets/vete4.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
 
+
+.ubicacion {
+    background-color: white;
+    margin: 0.5rem;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1.5rem;
+    align-items: center;
+}
+
+.ubicacion_text {
+    padding: 1rem;
+}
+
+.ubicacion_text>p {
+    font-family: var(--font2);
+    font-size: 0.8rem;
+    color: var(--colordark)
+}
+
+iframe {
+    width: 30rem;
+    height: 15rem;
+    border-radius: 2rem;
+    border: 1px solid var(--colordetails1);
+}
 /*
 .card{
     width: 14rem!important;
