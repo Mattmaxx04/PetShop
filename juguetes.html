@@ -135,8 +135,7 @@
 
                     <div class="d-flex justify-content-evenly align-content-center">
                       <p class="fw-bold m-0 d-flex">${{articulo.precio}}</p>
-                      <button type="button" class="btn btn-carrito">
-                        <a class="text-black"><i class="uil uil-shopping-cart"
+                      <button v-if="articulo.stock > 0" type="button" class="btn btn-carrito">                      <a class="text-black"><i class="uil uil-shopping-cart"
                           @click="agregarCarrito(articulo)"></i></a></button>
                           <button v-else type="button" class="btn btn-carrito" disabled> no hay ma
                             <!-- <a class="text-black"><i class="uil uil-shopping-cart"></i></a> -->
