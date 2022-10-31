@@ -33,8 +33,9 @@
 body {
     background: var(--colorligth2);
 }
-
-
+main{
+padding-top: 1rem;
+}
 .main__pagos{
     padding: 2rem 0rem;
 }
