@@ -743,7 +743,7 @@ iframe {
 }
 
 .img_container{
-    height: 65%;
+    height: 50%;
     border-radius: 1rem 1rem 0 0;
 }
 .img-art{
@@ -772,13 +772,6 @@ iframe {
 }
 .precio-art{
     font-size: 1.8rem;
-}/*fin */
-
-/* carrito estilo */
-.carrito-input input{
-    width: 4rem;
-    height: 1rem;
-    padding: 5px;
 }
 /*fin */
 

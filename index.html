@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
   <link rel="stylesheet" href="./css/style.css">
   <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon">
   <title>Inicio</title>
@@ -60,8 +60,6 @@
           <button class="btn"> <a href="#profesionales" class="cta">Conoce nuestros profesionales</a> </button>
         </div>
         <img src="./assets/perrito.jpg" class="inicio__img" alt="perrito">
-
-
       </div>
 
 
@@ -94,7 +92,7 @@
           <p>y accesorios para tu mascotas</p>
         </div>
       </div>
-  
+
       <div class="vr"></div>
       <div class="media list-features">
         <div class="media-left align-self-center mr-1 mr-sm-4">
@@ -150,20 +148,20 @@
       <section class="marcas__about">
         <h4>Empresas que nos acompañan</h4>
         <div class="marca__items">
-          
+
           <img class="marca" src="./assets/marca1.png" alt="" srcset="">
           <div class="vr"></div>
-                   
-         
-          <img  class="marca" src="./assets/marca3.png" alt="" srcset="">
-  
-          <div class="vr"></div>
-  
-          <img  class="marca" src="./assets/marca4.png" alt="" srcset="">
 
-      </div>
+
+          <img class="marca" src="./assets/marca3.png" alt="" srcset="">
+
+          <div class="vr"></div>
+
+          <img class="marca" src="./assets/marca4.png" alt="" srcset="">
+
+        </div>
       </section>
-  
+
 
     </section>
     <!-- MAPA -->
@@ -196,88 +194,92 @@
   </main>
 
 
-    <!-- OFF CANVA -->
-    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-      <div class="offcanvas-header border-bottom">
-        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Detalle</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  <!-- OFF CANVA -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header border-bottom">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Detalle</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div v-if="articulosCarrito.length==0" class="d-flex h-100 flex-column align-items-center justify-content-evenly">
+        <p class="fw-bolder text-center" style="color: #477890;">Hola, tu carrito esta vacio <span style="font-size:1.3rem;">😔</span></p>
+        <img src="assets/dog-paw-animate.svg" alt="">
       </div>
-      <div class="offcanvas-body">
-        <div v-if="articulosCarrito.length==0" class="d-flex h-100 flex-column align-items-center justify-content-evenly">
-          <p class="fw-bolder text-center" style="color: #477890;">Hola, tu carrito esta vacio 😔</p>
-          <img src="assets/dog-paw-animate.svg" alt="">
-        </div>
-        <div v-else class="h-100">
-         
-              <div v-for="articulo in articulosCarrito">
-                <div class="d-flex justify-content-between mb-1 border-bottom">
-                  <img :src="articulo.imagen" style="height: 5rem" alt="{{articulo.nombre}}">
-                  <div class="">
-                    <div class="d-flex flex-row-reverse gap-1 ms-1">
-                      <i class="uil uil-trash-alt" @click="eliminarCarrito(articulo)"></i>
-                      <h6>{{articulo.nombre}}</h6>    
-                      
-                      
-                    </div>
-                    <div class="d-flex carrito-input gap-1 justify-content-evenly">
-                     <p>${{articulo.precio}}</p>
-                     <p>x</p>
-                     <input type="number" min="1" max={{articulo.stock}} name="" id="">                   
-                     
-                    </div>
-                  </div>
-                </div>
+      <div v-else class="h-100">
+
+        <div v-for="articulo in articulosCarrito">
+          <div class="d-flex justify-content-between mb-1 border-bottom">
+            <img :src="articulo.imagen" style="height: 5rem" alt="{{articulo.nombre}}">
+            <div class="">
+              <div class="d-flex flex-row-reverse gap-1 ms-1">
+                <i class="uil uil-trash-alt" @click="eliminarCarrito(articulo)"></i>
+                <h6>{{articulo.nombre}}</h6>
+
+
               </div>
-            
-              <div class="d-flex p-2 justify-content-between">
-                <p>Total</p>
-                <p>${{totalCarrito}}</p>              </div>
-              <div class="dropdown-divider"></div>
-              <div class="d-grid gap-2">
-               
-                <a href="./detalle.html" class="btn btn-primary m-2" >Completar pedido</a>
+              <div class="d-flex carrito-input gap-1 justify-content-evenly">
+                <p>${{articulo.precio}}</p>
+                <p>x</p>
+                <input type="number" min="1" max={{articulo.stock}} name="" id="">
+
               </div>
-          
+            </div>
+          </div>
         </div>
+
+        <div class="d-flex p-2 justify-content-between">
+          <p>Total</p>
+          <p>${{totalCarrito}}</p>
+        </div>
+        <div class="dropdown-divider"></div>
+        <div class="d-grid gap-2">
+
+          <a href="./detalle.html" class="btn btn-primary m-2">Completar pedido</a>
+        </div>
+
       </div>
     </div>
-
-
-    <div class="footer-clean">
-      <footer>
-          <div class="container">
-              <div class="row justify-content-evenly text-start">
-                <div class="col-sm-4 col-md-3 item">
-                  <h3>¿Quiénes somos?</h3>
-                  <h6>Somos unos capos que vendemos cositas para animalitos y los curamos pq son muy cute.</h6>
-                  <p>Vení a conocernos!</p>
-              </div>
-                  <div class="col-sm-4 col-md-3 item">
-                      <h3>Páginas amigas:</h3>
-                      <ul class="d-flex justify-content-evenly">
-                          <li><img src="./assets/bajoelsol.jpg" style="width: 3rem; border-radius: 6px;" alt="Refugio Bajo el sol"></li>
-                          <li><img src="./assets/refugio1.jpeg" style="width: 3rem; border-radius: 6px;" alt="Refugio Bajo el sol"></li>
-                          <li><img src="./assets/cuatropatas.jpeg" style="width: 3rem; border-radius: 6px;" alt="Refugio Bajo el sol"></li>
-                      </ul>
-                  </div>
-                  <div class="col-sm-4 col-md-3 item">
-                      <h3>Desarrollado por:</h3>
-                      <ul>
-                          <li><a href="#">Dalila Mistura<i class="icon ion-social-linkedin"></i></a></li>
-                          <li><a href="#">Matías Quiroga<i class="icon ion-social-linkedin"></i></a></li>
-                          <li><a href="#">Alejandro I. Godino<i class="icon ion-social-linkedin"></i></a></li>
-                          <li><a href="#">Lucas L. Guaymas<i class="icon ion-social-linkedin"></i></a></li>
-                      </ul>
-                  </div>
-                 
-                  <div class="col-lg-3 item social d-flex justify-content-center"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a>
-
-                  </div>
-                  <p class="copyright text-end">© 2022 Madalu. Es una marca registrada.</p>
-              </div>
-          </div>
-      </footer>
   </div>
+
+
+  <div class="footer-clean">
+    <footer>
+        <div class="container">
+            <div class="row justify-content-evenly text-start">
+              <div class="col-sm-4 col-md-3 item">
+                <h3>¿Quiénes somos?</h3>
+                <h6>Amantes de los animales, profesionales dedicados y comprometidos con el bienestar y la salud de tus mascotas.</h6>
+                <a href="./index.html"><p>Vení a conocernos!</p></a>
+            </div>
+                <div class="col-sm-4 col-md-3 item">
+                    <h3 class="text-start">Páginas amigas:</h3>
+                    
+                    <ul class="d-flex justify-content-between">
+                        <li><a href="https://www.instagram.com/grupobajoelsol/?hl=es" target="_blank"><img src="./assets/bajoelsol.jpg" style="width: 3rem; border-radius: 6px;" alt="Refugio Bajo el sol"></a></li>
+                        <li><a href="https://www.instagram.com/refugioelcampito/?hl=es" target="_blank"><img src="./assets/refugio1.jpeg" style="width: 3rem; border-radius: 6px;" alt="Refugio Bajo el sol"></a></li>
+                        <li><a href="https://www.proyecto4patas.org/" target="_blank"><img src="./assets/cuatropatas.jpeg" style="width: 3rem; border-radius: 6px;" alt="Refugio Bajo el sol"></a></li>
+                        <li><a href="https://www.instagram.com/ayudacan/?hl=es" target="_blank"><img src="./assets/ayudacam.png" style="width: 3rem; border-radius: 6px;" alt="Refugio Bajo el sol"></li>
+                        </a>
+                        </ul>
+                </div>
+                <div class="col-sm-4 col-md-2 item">
+                    <h3>Desarrollado por:</h3>
+                    <ul>
+                        <li><a href="https://www.linkedin.com/in/dalilamf/" target="_blank">Dalila Mistura<i class="icon ion-social-linkedin"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/mat%C3%ADasquiroga/" target="_blank">Matías Quiroga<i class="icon ion-social-linkedin"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/alejandro-ignacio-godino/" target="_blank">Alejandro I. Godino<i class="icon ion-social-linkedin"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/luca-leon-guaymas-600651222/" target="_blank">Luca L. Guaymas<i class="icon ion-social-linkedin"></i></a></li>
+                    </ul>
+                </div>
+               
+                <div class="col-lg-3 item social d-flex justify-content-center"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a><a href="#"><i class="icon ion-social-snapchat"></i></a><a href="#"><i class="icon ion-social-instagram"></i></a>
+
+                </div>
+                <p class="copyright text-end">© 2022 Madalu. Es una marca registrada.</p>
+            </div>
+        </div>
+    </footer>
+  </div>
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
