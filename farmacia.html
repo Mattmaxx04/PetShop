@@ -108,7 +108,7 @@
                     <img :src="articulo.imagen" class="img-art" alt="{{articulo.nombre}}">
                   </div>                  
                   <div class="contenido__flip d-flex pt-1 flex-column align-items-center justify-content-around">
-                    <h6 class="text-center fw-bold  h6__nombre">{{articulo.nombre}}</h6>
+                    <h6 class="text-center h6__nombre">{{articulo.nombre}}</h6>
                     <p class="card-text precio-art fw-bold">${{articulo.precio}}</p>
                   </div>
                   <img v-if="articulo.stock<=5" src="assets/ultimasunidades.png" style="width: 80px; position: relative; top: -294px; left: -90px; transform: rotate(-25deg);" alt="">

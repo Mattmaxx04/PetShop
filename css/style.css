@@ -35,6 +35,8 @@ body {
 .h6__nombre{
     font-family: var(--font2)!important;
     color: var(--colordark)!important;
+    font-weight: 800;
+    margin: 0.3rem;
 }
 main{
     padding-top: 1rem;
