@@ -151,6 +151,11 @@ createApp({
         );
       }
       if (this.textoBuscar != "" && this.inputDrop.length != 0) {
+        if(this.inputDrop == 'def'){
+          this.articulos = this.backUpArticulos.filter((articulo) =>
+          articulo.nombre.toLowerCase().includes(this.textoBuscar.toLowerCase())
+          )
+        }
         if (this.inputDrop == "Max") {
           this.articulos = this.backUpArticulos
             .filter((articulo) =>
@@ -171,6 +176,9 @@ createApp({
         }
       }
       if (this.textoBuscar == "" && this.inputDrop.length != 0) {
+        if(this.inputDrop == 'def'){
+          this.articulos = this.backUpArticulos;
+        }
         if (this.inputDrop == "Max") {
           this.articulos = this.backUpArticulos
             .filter((articulo) =>
@@ -189,6 +197,7 @@ createApp({
             )
             .sort((a, b) => a.precio - b.precio);
         }
+        
       }
     },
     cantidadEProducto() {
