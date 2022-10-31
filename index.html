@@ -61,8 +61,6 @@
           <button class="btn"> <a href="#profesionales" class="cta">Conoce nuestros profesionales</a> </button>
         </div>
         <img src="./assets/perrito.jpg" class="inicio__img" alt="perrito">
-
-
       </div>
 
 
@@ -95,7 +93,7 @@
           <p>y accesorios para tu mascotas</p>
         </div>
       </div>
-  
+
       <div class="vr"></div>
       <div class="media list-features">
         <div class="media-left align-self-center mr-1 mr-sm-4">
@@ -151,20 +149,20 @@
       <section class="marcas__about">
         <h4>Empresas que nos acompañan</h4>
         <div class="marca__items">
-          
+
           <img class="marca" src="./assets/marca1.png" alt="" srcset="">
           <div class="vr"></div>
-                   
-         
-          <img  class="marca" src="./assets/marca3.png" alt="" srcset="">
-  
-          <div class="vr"></div>
-  
-          <img  class="marca" src="./assets/marca4.png" alt="" srcset="">
 
-      </div>
+
+          <img class="marca" src="./assets/marca3.png" alt="" srcset="">
+
+          <div class="vr"></div>
+
+          <img class="marca" src="./assets/marca4.png" alt="" srcset="">
+
+        </div>
       </section>
-  
+
 
     </section>
     <!-- MAPA -->
@@ -197,52 +195,52 @@
   </main>
 
 
-    <!-- OFF CANVA -->
- <!-- ------ OFFCANVA CARRITO -------- -->
- <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-  <div class="offcanvas-header border-bottom">
-    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Detalle</h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <div class="offcanvas-body">
-    <div v-if="articulosCarrito.length==0" class="d-flex h-100 flex-column align-items-center justify-content-evenly">
-      <p class="fw-bolder text-center" style="color: #477890;">Hola, tu carrito esta vacio 😔</p>
-      <img src="assets/dog-paw-animate.svg" alt="">
+  <!-- OFF CANVA -->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header border-bottom">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Detalle</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
-    <div v-else class="h-100">
-     
-          <div v-for="articulo in articulosCarrito">
-            <div class="d-flex justify-content-between mb-1 border-bottom">
-              <img :src="articulo.imagen" style="height: 5rem" alt="{{articulo.nombre}}">
-              <div class="">
-                <div class="d-flex flex-row-reverse gap-1 ms-1">
-                  <i class="uil uil-trash-alt" @click="eliminarCarrito(articulo)"></i>
-                  <h6>{{articulo.nombre}}</h6>    
-                  
-                  
-                </div>
-                <div class="d-flex carrito-input gap-1 justify-content-evenly">
-                 <p>${{articulo.precio}}</p>
-                 <p>x</p>
-                 <input type="number" min="1" max={{articulo.stock}} name="" id="">                   
-                 
-                </div>
+    <div class="offcanvas-body">
+      <div v-if="articulosCarrito.length==0" class="d-flex h-100 flex-column align-items-center justify-content-evenly">
+        <p class="fw-bolder text-center" style="color: #477890;">Hola, tu carrito esta vacio <span style="font-size:1.3rem;">😔</span></p>
+        <img src="assets/dog-paw-animate.svg" alt="">
+      </div>
+      <div v-else class="h-100">
+
+        <div v-for="articulo in articulosCarrito">
+          <div class="d-flex justify-content-between mb-1 border-bottom">
+            <img :src="articulo.imagen" style="height: 5rem" alt="{{articulo.nombre}}">
+            <div class="">
+              <div class="d-flex flex-row-reverse gap-1 ms-1">
+                <i class="uil uil-trash-alt" @click="eliminarCarrito(articulo)"></i>
+                <h6>{{articulo.nombre}}</h6>
+
+
+              </div>
+              <div class="d-flex carrito-input gap-1 justify-content-evenly">
+                <p>${{articulo.precio}}</p>
+                <p>x</p>
+                <input type="number" min="1" max={{articulo.stock}} name="" id="">
+
               </div>
             </div>
           </div>
-        
-          <div class="d-flex p-2 justify-content-between">
-            <p>Total</p>
-            <p>${{totalCarrito}}</p>              </div>
-          <div class="dropdown-divider"></div>
-          <div class="d-grid gap-2">
-           
-            <a href="./detalle.html" class="btn btn-primary m-2" >Completar pedido</a>
-          </div>
-      
+        </div>
+
+        <div class="d-flex p-2 justify-content-between">
+          <p>Total</p>
+          <p>${{totalCarrito}}</p>
+        </div>
+        <div class="dropdown-divider"></div>
+        <div class="d-grid gap-2">
+
+          <a href="./detalle.html" class="btn btn-primary m-2">Completar pedido</a>
+        </div>
+
+      </div>
     </div>
   </div>
-</div>
 
 
   <footer>
