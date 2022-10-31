@@ -495,7 +495,9 @@ main {
     background: var(--colorligth2);
     padding: 1rem;
 }
-
+.doctors__cards{
+    width: 18rem;
+}
 .doctors__container {
     display: flex;
     gap: 0.5rem;
