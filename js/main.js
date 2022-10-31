@@ -85,6 +85,21 @@ createApp({
         "success"
       );
     },
+    limpiaCarrito(){
+      this.articulosCarrito = []
+      console.log(this.articulosCarrito)
+      document.getElementById("nombre").value=""
+      document.getElementById("direccion").value=""
+      document.getElementById("mail").value=""
+      document.getElementById("number").value=""
+      document.getElementById("provincia").value="Provincia"
+      document.getElementById("ciudad").value=""
+      document.getElementById("tarjeta").value=""
+      document.getElementById("titular").value=""
+      document.getElementById("mes").value=""
+      document.getElementById("codigoS").value=""
+      
+    },
   },
   graciasPorSuCompra() {
     new swal(
