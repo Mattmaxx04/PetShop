@@ -71,8 +71,6 @@
 
       </div>
 
-  </div>
-
   </header>
 
   <!-- MAIN -->
@@ -211,7 +209,11 @@
       <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
-      <div>
+      <div v-if="articulosCarrito.length==0" class="d-flex h-100 flex-column align-items-center justify-content-evenly">
+        <p class="fw-bolder text-center" style="color: #477890;">Hola, tu carrito esta vacio <span style="font-size:1.3rem;">😔</span></p>
+        <img src="assets/dog-paw-animate.svg" alt="">
+      </div>
+      <div v-else class="h-100">
        
             <div v-for="articulo in articulosCarrito">
               <div class="d-flex justify-content-between mb-1 border-bottom">
@@ -292,8 +294,7 @@
 
       </ul>
     </div>
-    </div>
-    </div>
+    
 
 
 
