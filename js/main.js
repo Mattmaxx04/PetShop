@@ -51,9 +51,9 @@ createApp({
           }
         });
     },
-
     agregarCarrito(articulo) {
       this.itemArtCar = this.articulosCarrito.filter(item => item._id == articulo._id)[0];
+
        if(this.itemArtCar != undefined){
         this.itemArtCar.cant++;
          } else {
@@ -69,10 +69,29 @@ createApp({
          articulo.stock --;
          localStorage.setItem("favorito", JSON.stringify(this.articulosCarrito)); 
      },
-
      eliminarCarrito(articulo) {
-      this.itemArtCar = this.articulos.filter((item) => item._id == articulo._id)[0];
+      this.itemArtCar = this.articulos.filter((item) => item._id == articulo._id)[0];  
+      this.itemArtCar.cant--;          
+      let indice = 0;
+      this.itemArtCar.stock += articulo.cant;
+      this.articulosCarrito.forEach((item, i) => item._id == articulo._id ? (indice = i): null)
+      this.articulosCarrito.splice(indice, 1);  
+      /*if (this.itemArtCar.cant > 1){
+        this.itemArtCar.cant--;  
+        this.itemArtCar.stock += articulo.cant;      
+      }else if (this.itemArtCar.cant === 1)
+      this.itemArtCar.stock += articulo.cant;
+      this.articulosCarrito.forEach((item, i) => item._id == articulo._id ? (indice = i): null)
+      this.articulosCarrito.splice(indice, 1);    
+                  */
+       localStorage.setItem("favorito", JSON.stringify(this.articulosCarrito));
+ 
+     },
+    /* eliminarCarrito(articulo) {
+      console.log(this.itemArtCar);
+      this.itemArtCar = this.articulos.filter((item) => item._id == articulo._id)[0];      
      console.log(this.itemArtCar);
+
      this.itemArtCar.stock += articulo.cant;
        
        let indice = 0;
@@ -80,7 +99,7 @@ createApp({
        this.articulosCarrito.splice(indice, 1);
        localStorage.setItem("favorito", JSON.stringify(this.articulosCarrito));
  
-     },
+     },*/
     // agregarCarrito(articulo) {
     //   if (!this.articulosCarrito.includes(articulo)) {
     //     this.articulosCarrito.push(articulo);
@@ -120,22 +139,7 @@ createApp({
       document.getElementById("selectcontact").value = ""
       document.getElementById("inputcomentarioscontact").value = ""
     },    
-    limpiaCarrito(){
-      this.articulosCarrito = []
-      console.log(this.articulosCarrito)
-      document.getElementById("nombre").value=""
-      document.getElementById("direccion").value=""
-      document.getElementById("mail").value=""
-      document.getElementById("number").value=""
-      document.getElementById("provincia").value="Provincia"
-      document.getElementById("ciudad").value=""
-      document.getElementById("tarjeta").value=""
-      document.getElementById("titular").value=""
-      document.getElementById("mes").value=""
-      document.getElementById("codigoS").value=""
-      setTimeout(function(){window.location.href="/index.html"},3000)
-    },
-
+   
     graciasPorSuCompra() {
       
         new swal(
@@ -143,11 +147,22 @@ createApp({
           "Su solicitud ha sido procesada correctamente.",
           "success"
         );
-
+        document.getElementById("nombre").value=""
+        document.getElementById("direccion").value=""
+        document.getElementById("mail").value=""
+        document.getElementById("number").value=""
+        document.getElementById("provincia").value="Provincia"
+        document.getElementById("ciudad").value=""
+        document.getElementById("tarjeta").value=""
+        document.getElementById("titular").value=""
+        document.getElementById("mes").value=""
+        document.getElementById("codigoS").value=""
+        setTimeout(function(){window.location.href="/index.html"},3000)
         this.articulosCarrito = []
         this.totalCarrito = 0
       
     },
+
   },
   computed: {
     filtro() {
@@ -209,12 +224,22 @@ createApp({
         
       }
     },
-    cantidadEProducto() {
+    stock(){
+
+    },
+    cantidad() {
       return this.articulosCarrito.reduce((acumulador, item) => acumulador + item.cant, 0)
     },
-    totalPrecio() {
+
+    subtotal(){
+      let resultado = articulo.precio * articulo.cantidad
+      return  resultado
+    },
+
+    total() {
       return this.articulosCarrito.reduce((acumulador, item) => acumulador + (item.cant * item.precio), 0)
     }
+
     // pintarSuma() {
     //   if (this.articulosCarrito.length !== 0) {
     //     console.log(this.articulosCarrito);
