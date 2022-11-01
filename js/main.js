@@ -3,7 +3,7 @@ const { createApp } = Vue;
 createApp({
   data() {
     return {
-      urlApi: "https://apipetshop.herokuapp.com/api/articulos",
+      urlApi: "https://apipet",
       articulos: [],
       articulosCarrito: [],
       totalCarrito: 0,
