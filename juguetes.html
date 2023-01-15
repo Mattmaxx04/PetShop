@@ -140,7 +140,7 @@
 </div>
 
       <div class="p-3 mt-4 d-flex flex-wrap container-jyf justify-content-center align-items-center gap-3 mb-4">
-        <div v-if="backUpArticulos.length!=0 && articulos.length==0"
+        <div v-if="backUpArticulos.length==0"
           class="error-404 d-flex justify-content-center align-content-center flex-row gap-2">
           <div class="d-flex align-items-center">
             <p class="text-center">No se encontraron elementos, por favor refina tu búsqueda</p>
@@ -150,7 +150,7 @@
           </div>
         </div>
 
-        <div v-for="articulo in articulos" class="">
+        <div v-for="articulo in backUpArticulos" class="">
           <div class=" d-flex justify-content-center flex-wrap gap-3">
             <div class="flip-card">
               <div class="flip-card-inner">
